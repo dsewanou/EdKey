@@ -9,14 +9,15 @@
     <!-- Start Page hero-->
     @include('partials.landing.hero')
     <!-- End Page hero-->
+    
+    <!-- Start about Section-->
+    @include('partials.landing.about')
+    <!-- End about Section-->
 
     <!-- Start services Section-->
     @include('partials.landing.services')
     <!-- End services Section-->
 
-    <!-- Start about Section-->
-    @include('partials.landing.about')
-    <!-- End about Section-->
 
     <!-- Start stats Section-->
     @include('partials.landing.stats')

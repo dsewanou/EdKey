@@ -24,8 +24,8 @@
                                                         class="menu-link {{ Request::is('/') ? 'active' : '' }}"
                                                         href="{{ url('/') }}">Overview</a>
                                         </li>
-                                        <li class="menu-item"><a class="menu-link" href="{{ url('/') }}#about">about us </a></li>
-                                        <li class="menu-item has-sub-menu"><a class="menu-link" href="{{ url('/') }}#services">services</a>
+                                        <!-- <li class="menu-item"><a class="menu-link" href="{{ url('/') }}#about">about us </a></li> -->
+                                        <li class="menu-item has-sub-menu"><a class="menu-link" href="{{ url('/') }}#services">Features</a>
                                                 <!-- <ul class="sub-menu ">
                                                         <li class="menu-item sub-menu-item"><a
                                                                         class="menu-link sub-menu-link  "
@@ -36,7 +36,7 @@
                                                 </ul> -->
                                         </li>
                                         <li class="menu-item has-sub-menu"><a class="menu-link" href="{{ url('/') }}#portfolio">portfolio</a>
-                                                <!-- <ul class="sub-menu ">
+                                                <ul class="sub-menu ">
                                                         <li class="menu-item sub-menu-item"><a
                                                                         class="menu-link sub-menu-link  "
                                                                         href="#">portfolio grid</a></li>
@@ -46,11 +46,10 @@
                                                         <li class="menu-item sub-menu-item"><a
                                                                         class="menu-link sub-menu-link  "
                                                                         href="#">portfolio single</a></li>
-                                                </ul> -->
+                                                </ul>
                                         </li>
-                                        <li class="menu-item has-sub-menu"><a class="menu-link" href="{{ url('/') }}#blog">blog<i
-                                                                class="fas fa-plus  plus-icon"> </i></a>
-                                                <ul class="sub-menu ">
+                                        <li class="menu-item has-sub-menu"><a class="menu-link" href="{{ url('/') }}#blog">blog</a>
+                                                <!-- <ul class="sub-menu ">
                                                         <li class="menu-item sub-menu-item"><a
                                                                         class="menu-link sub-menu-link  " href="#">blog
                                                                         home 1 colmun</a></li>
@@ -63,7 +62,7 @@
                                                         <li class="menu-item sub-menu-item"><a
                                                                         class="menu-link sub-menu-link  "
                                                                         href="#">single post</a></li>
-                                                </ul>
+                                                </ul> -->
                                         </li>
                                         <li class="menu-item"><a
                                                         class="menu-link {{ Request::is('pricing') ? 'active' : '' }}"
