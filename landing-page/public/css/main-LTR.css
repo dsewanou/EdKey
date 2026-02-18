@@ -2151,6 +2151,31 @@ body.rounded-btns .read-more {
   color: var(--clr-white);
 }
 
+.content-always-light.header-basic .btn-solid,
+.is-sticky.header-basic .btn-solid {
+  background-color: var(--clr-white);
+  border-color: var(--clr-white);
+  color: var(--clr-main) !important;
+}
+
+.content-always-light.header-basic .btn-solid:hover,
+.is-sticky.header-basic .btn-solid:hover {
+  background-color: transparent;
+  color: var(--clr-white) !important;
+}
+
+.content-always-light.header-basic .btn-outline,
+.is-sticky.header-basic .btn-outline {
+  color: var(--clr-white) !important;
+  border-color: var(--clr-white) !important;
+}
+
+.content-always-light.header-basic .btn-outline:hover,
+.is-sticky.header-basic .btn-outline:hover {
+  background-color: var(--clr-white);
+  color: var(--clr-main) !important;
+}
+
 .header-basic {
   position: fixed;
   top: 0;

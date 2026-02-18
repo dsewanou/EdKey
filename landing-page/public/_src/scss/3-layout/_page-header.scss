@@ -39,6 +39,27 @@ $padding-for-hero-section: $link-height;
       color: $clr-white;
     }
   }
+
+  .btn-solid {
+    background-color: $clr-white;
+    border-color: $clr-white;
+    color: $clr-main !important;
+
+    &:hover {
+      background-color: transparent;
+      color: $clr-white !important;
+    }
+  }
+
+  .btn-outline {
+    color: $clr-white !important;
+    border-color: $clr-white !important;
+
+    &:hover {
+      background-color: $clr-white;
+      color: $clr-main !important;
+    }
+  }
 }
 
 %headermain-rules {

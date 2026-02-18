@@ -51,7 +51,7 @@ $waveyPath = "M1395.385,1568.169a21.357,21.357,0,0,0-7.563,1.667c-5.893,2.122-10
           </div>
           <!--second slide-->
           <div class="swiper-slide"> 
-            <div class="slide-bg-img" data-bg-img="{{ asset('assets/images/hero/hero-bg-1.jpg') }}">
+            <div class="slide-bg-img" data-bg-img="{{ asset('assets/images/hero/hero-bg-1.png') }}">
               <div class="overlay-gradient-color "></div>
             </div>
             <div class="container"> 

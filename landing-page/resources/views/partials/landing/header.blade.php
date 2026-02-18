@@ -22,33 +22,29 @@
                                 <ul class="list-js links-list">
                                         <li class="menu-item"><a
                                                         class="menu-link {{ Request::is('/') ? 'active' : '' }}"
-                                                        href="{{ url('/') }}">Overview</a>
+                                                        href="{{ url('/') }}">Product Overview</a>
                                         </li>
-                                        <!-- <li class="menu-item"><a class="menu-link" href="{{ url('/') }}#about">about us </a></li> -->
                                         <li class="menu-item has-sub-menu"><a class="menu-link" href="{{ url('/') }}#services">Features</a>
-                                                <!-- <ul class="sub-menu ">
-                                                        <li class="menu-item sub-menu-item"><a
-                                                                        class="menu-link sub-menu-link  "
-                                                                        href="#">services</a></li>
-                                                        <li class="menu-item sub-menu-item"><a
-                                                                        class="menu-link sub-menu-link  "
-                                                                        href="#">service single</a></li>
-                                                </ul> -->
+                                                
                                         </li>
-                                        <li class="menu-item has-sub-menu"><a class="menu-link" href="{{ url('/') }}#portfolio">portfolio</a>
+                                         <li class="menu-item"><a
+                                                        class="menu-link {{ Request::is('pricing') ? 'active' : '' }}"
+                                                        href="{{ url('/pricing') }}">pricing plans</a>
+                                        </li>
+                                        <li class="menu-item has-sub-menu"><a class="menu-link" href="{{ url('/') }}#portfolio">Resource</a>
                                                 <ul class="sub-menu ">
                                                         <li class="menu-item sub-menu-item"><a
                                                                         class="menu-link sub-menu-link  "
-                                                                        href="#">portfolio grid</a></li>
+                                                                        href="#">Documentation API</a></li>
                                                         <li class="menu-item sub-menu-item"><a
                                                                         class="menu-link sub-menu-link  "
-                                                                        href="#">portfolio slider</a></li>
-                                                        <li class="menu-item sub-menu-item"><a
+                                                                        href="#">FAQ</a></li>
+                                                        <!-- <li class="menu-item sub-menu-item"><a
                                                                         class="menu-link sub-menu-link  "
-                                                                        href="#">portfolio single</a></li>
+                                                                        href="#">portfolio single</a></li> -->
                                                 </ul>
                                         </li>
-                                        <li class="menu-item has-sub-menu"><a class="menu-link" href="{{ url('/') }}#blog">blog</a>
+                                        <li class="menu-item has-sub-menu"><a class="menu-link" href="{{ url('/') }}#blog">Support</a>
                                                 <!-- <ul class="sub-menu ">
                                                         <li class="menu-item sub-menu-item"><a
                                                                         class="menu-link sub-menu-link  " href="#">blog
@@ -64,13 +60,14 @@
                                                                         href="#">single post</a></li>
                                                 </ul> -->
                                         </li>
-                                        <li class="menu-item"><a
-                                                        class="menu-link {{ Request::is('pricing') ? 'active' : '' }}"
-                                                        href="{{ url('/pricing') }}">pricing plans</a>
-                                        </li>
+                                       
                                         <li class="menu-item"><a
                                                         class="menu-link {{ Request::is('contact-us') ? 'active' : '' }}"
                                                         href="{{ url('/contact-us') }}">contact sales </a></li>
+                                        <li class="menu-item"><a class="btn-solid btn-small" href="#">Accedez gratuitement</a>
+                                        </li>
+                                        <li class="menu-item"><a class="btn-outline btn-small" href="#">Connexion</a>
+                                        </li>
                                 </ul>
                         </div>
                         <div class="controls-box">
