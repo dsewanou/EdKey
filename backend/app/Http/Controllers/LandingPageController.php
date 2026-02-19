@@ -74,12 +74,13 @@ class LandingPageController extends Controller
                 ['icon' => 'bi bi-card-heading', 'title' => 'Carte Universitaire', 'text' => 'Émission et gestion des cartes d\'étudiants et d\'enseignants multi-services.', 'url' => '#'],
                 ['icon' => 'bi bi-house-door', 'title' => 'Résidences Universitaires', 'text' => 'Attribution et gestion optimisée de l\'hébergement en résidences universitaires.', 'url' => '#'],
                 ['icon' => 'bi bi-journal-bookmark', 'title' => 'Gestion des Curricula', 'text' => 'Planification et structuration complète des programmes d\'enseignement.', 'url' => '#'],
+                ['icon' => 'bi bi-journal-check', 'title' => 'Délivrance des actes scolaires', 'text' => 'Automatisation de l\'édition et de la délivrance des bulletins et diplômes scolaires.', 'url' => '#'],
                 ['icon' => 'bi bi-file-earmark-check', 'title' => 'Actes Universitaires', 'text' => 'Délivrance, équivalence et authentification sécurisée des actes académiques.', 'url' => '#'],
                 ['icon' => 'bi bi-robot', 'title' => 'Intégration de l\'IA', 'text' => 'Automatisation intelligente et analyses prédictives pour assister la prise de décision.', 'url' => '#'],
                 ['icon' => 'bi bi-hdd-network', 'title' => 'Intégration aux systèmes', 'text' => 'Connectivité fluide avec des outils tiers et APIs externes pour un écosystème unifié.', 'url' => '#'],
-                ['icon' => 'bi bi-shield-lock', 'title' => 'Sécurité & Audit', 'text' => 'Couches de sécurité robustes complète des activités pour une traçabilité totale.', 'url' => '#'],
+                ['icon' => 'bi bi-shield-lock', 'title' => 'Gestion de la Sécurité et de l\'Audit', 'text' => 'Couches de sécurité robustes complète des activités pour une traçabilité totale.', 'url' => '#'],
                 ['icon' => 'bi bi-paperclip', 'title' => 'Gestion des documents & pièces jointes', 'text' => 'Système de gestion documentaire avancé pour le stockage et le partage sécurisé.', 'url' => '#'],
-                ['icon' => 'bi bi-cpu', 'title' => 'Administration de la  plateforeme', 'text' => 'Pilotage centralisé et configuration avancée pour une gestion totale de l\'écosystème.', 'url' => '#'],
+                ['icon' => 'bi bi-cpu', 'title' => 'Administration de la  plateforme', 'text' => 'Pilotage centralisé et configuration avancée pour une gestion totale de l\'écosystème.', 'url' => '#'],
 
             ],
             'stats' => [
