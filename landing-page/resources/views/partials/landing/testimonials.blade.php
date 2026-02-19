@@ -2,11 +2,11 @@
     <div class="overlay-photo-image-bg parallax " data-bg-img="{{ asset('assets/images/sections-bg-images/1.jpg') }}"
         data-bg-opacity=".25"> </div>
     <div class="container">
-        <div class="sec-heading  centered ">
-            <div class="content-area"><span class=" pre-title       wow fadeInUp "
-                    data-wow-delay=".2s">testimonials</span>
-                <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">customers <span
-                        class='hollow-text'>testmonials</span></h2>
+        <div class="sec-heading centered">
+            <div class="content-area">
+                <span class="pre-title wow fadeInUp" data-wow-delay=".2s">Témoignages</span>
+                <h2 class="title wow fadeInUp" data-wow-delay=".4s">Ce que nos <span
+                        class="hollow-text">partenaires</span> disent <span class="featured-text">de nous</span></h2>
             </div>
         </div>
         <div class="row d-flex align-items-center">

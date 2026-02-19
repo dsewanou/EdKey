@@ -1,15 +1,15 @@
 <section class="pricing mega-section  " id="pricing-1">
     <div class="container">
         <div class="sec-heading  ">
-            <div class="content-area"><span class=" pre-title       wow fadeInUp " data-wow-delay=".2s">pricing
-                    plans</span>
-                <h2 class=" title    wow fadeInUp" data-wow-delay=".4s"><span class='hollow-text'>affordable</span>
-                    pricing plans</h2>
-                <p class="subtitle   wow fadeInUp " data-wow-delay=".6s">Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit Omnis <br>id atque dignissimos repellat quae ullam.</p>
+            <div class="content-area"><span class=" pre-title       wow fadeInUp " data-wow-delay=".2s">Nos
+                    Tarifs</span>
+                <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">Des solutions <span
+                        class='hollow-text'>adaptées</span> à vos <span class='featured-text'>besoins</span></h2>
+                <p class="subtitle   wow fadeInUp " data-wow-delay=".6s">Choisissez la formule qui correspond le mieux à
+                    la taille et aux objectifs de votre établissement.</p>
             </div>
-            <div class=" cta-area   wow fadeInUp" data-wow-delay=".8s"><a class="cta-btn btn-solid    " href="#">see all
-                    plans<i class="bi bi-arrow-right icon "></i></a></div>
+            <div class=" cta-area   wow fadeInUp" data-wow-delay=".8s"><a class="cta-btn btn-solid    " href="#">Voir
+                    tous les tarifs<i class="bi bi-arrow-right icon "></i></a></div>
         </div>
         <div class="row">
             @foreach($pricingPlans as $plan)
@@ -30,7 +30,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <div class="plan-cta"><a class="cta-btn btn-outline " href="#0">select plan </a></div>
+                        <div class="plan-cta"><a class="cta-btn btn-outline " href="#0">Choisir cette formule</a></div>
                     </div>
                 </div>
             @endforeach

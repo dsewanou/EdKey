@@ -63,7 +63,7 @@
                                        
                                         <li class="menu-item"><a
                                                         class="menu-link {{ Request::is('contact-us') ? 'active' : '' }}"
-                                                        href="{{ url('/contact-us') }}">contact sales </a></li>
+                                                        href="{{ url('/contact-us') }}">Contactez-nous</a></li>
                                         <li class="menu-item"><a class="btn-solid btn-small" href="#">Accedez gratuitement</a>
                                         </li>
                                         <li class="menu-item"><a class="btn-outline btn-small" href="#">Connexion</a>
