@@ -1,0 +1,29 @@
+/* src/css/colors.css */
+
+/* Couleurs principales EdKey */
+:root {
+  --app-primary: #011c61;
+  --dark-primary: #0d1b3f;
+  --secondary: #f5a623;
+  --accent: #e94e77;
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger: #dc3545;
+}
+
+/* Exemples d’utilisations */
+.bg-app-primary {
+  background-color: var(--app-primary);
+}
+
+.text-app-primary {
+  color: var(--app-primary);
+}
+
+.bg-dark-primary {
+  background-color: var(--dark-primary);
+}
+
+.text-dark-primary {
+  color: var(--dark-primary);
+}
