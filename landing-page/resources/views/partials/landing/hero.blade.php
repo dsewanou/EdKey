@@ -16,7 +16,7 @@
               <div class="row g-0">
                 <div class="col-12 col-lg-8 ">
                   <div class="row ">
-                    <div class="col-12   ">
+                    <!-- <div class="col-12   ">
                       <div class="hero-social-icons mb-3 ">
                         <div class="sc-wrapper dir-row sc-flat">
                           <ul class="sc-list">
@@ -31,7 +31,7 @@
                           </ul>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
                     <div class="col-12     ">
                       <div class="pre-title">{{ $slide['pre_title'] }}</div>
                       <h1 class="slide-title">

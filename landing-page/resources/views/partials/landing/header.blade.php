@@ -63,7 +63,6 @@
                                 <!--Menu Toggler button-->
                                 <div class="control  menu-toggler"><span></span><span></span><span></span></div>
                                 <!--search Icon button-->
-                                <div class="control header-search-btn"><i class="bi bi-search icon"></i></div>
                                 <!--Dark/Light mode button-->
                                 <div class="mode-switcher ">
                                         <div class="switch-inner go-light " title="Switch To Light Mode "><i

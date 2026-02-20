@@ -11,7 +11,7 @@
                         d'enseignement.
                     </p>
                 </div>
-                <div class="form-area ">
+                <!-- <div class="form-area ">
                     <div class="mailchimp-form ">
                         <form class="one-field-form" method="post" action="#0">
                             <div class="field-group ">
@@ -26,7 +26,7 @@
                                 personnelles</span>
                         </form>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="col-6 col-lg-2  footer-col ">
                 <h2 class=" footer-col-title    ">Liens utiles</h2>
@@ -68,7 +68,7 @@
                             Bénin.</span></div>
                     <div class="contact-info-card"><i class="bi bi-phone icon"></i><a class="info"
                             href="tel:+2290195621919">+229 01 95 62 19 19 </a></div>
-                    <div class="social-icons mt-3">
+                    <!-- <div class="social-icons mt-3">
                         <div class="sc-wrapper dir-row sc-size-32">
                             <ul class="sc-list">
                                 <li class="sc-item " title="Facebook"><a class="sc-link" href="#0"
@@ -81,7 +81,7 @@
                                             class="bi bi-twitter-x sc-icon"></i></a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
