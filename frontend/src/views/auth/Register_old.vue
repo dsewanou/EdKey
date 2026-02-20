@@ -11,13 +11,13 @@ import AuthLayout from "@/layouts/auth/AuthLayout.vue"
 
 <template>
   <AuthLayout 
-    title=" " 
-    subtitle=" "
+    title="Rejoignez EdKey" 
+    subtitle="Créez votre compte en quelques instants et commencez à digitaliser votre expérience éducative."
   >
     <Card class="border-none shadow-none bg-transparent p-0">
       <AuthRegister />
       
-      <!-- <div class="mt-8 flex flex-col gap-4 ">
+      <div class="mt-8 flex flex-col gap-4 ">
         <div class="relative">
           <div class="absolute inset-0 flex items-center">
             <span class="w-full border-t border-gray-200"></span>
@@ -33,7 +33,7 @@ import AuthLayout from "@/layouts/auth/AuthLayout.vue"
         >
           Se connecter à mon espace
         </RouterLink>
-      </div> -->
+      </div>
     </Card>
   </AuthLayout>
 </template>

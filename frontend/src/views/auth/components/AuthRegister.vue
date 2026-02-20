@@ -1,195 +1,120 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { Label } from '@/components/ui/label'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import { 
-  User, BookOpen, FileText, Heart, ArrowRight, ArrowLeft, Check 
-} from 'lucide-vue-next'
+import { useRoute } from 'vue-router'
+import config from '../data/formConfig.json'
 
-// Types pour le niveau d'étude
-type EducationLevel = 'maternelle' | 'primaire' | 'secondaire' | 'superieur'
+// Imports des étapes
+import StepIdentity from '../steps/StepIdentity.vue'
+import StepAcademic from '../steps/StepAcademic.vue'
+import StepContact from '../steps/StepContact.vue'
+import StepFinal from '../steps/StepFinal.vue'
+import StepSuccess from '../steps/StepSuccess.vue' // Import de l'étape succès
+
+const route = useRoute()
+
+const role = computed(() => (route.query.role as 'parent' | 'student') || 'student')
+const roleConfig = computed(() => config.roles[role.value])
 
 const currentStep = ref(1)
 const totalSteps = 4
+const isFinished = ref(false) // Flag pour basculer sur l'écran de succès
 
-// État réactif du formulaire complet
-const form = ref({
-  // Étape 1 : Niveau & Identité de base
-  niveauEtude: '' as EducationLevel | '',
+const formData = ref({
+  role: role.value,
   nom: '',
   prenoms: '',
-  sexe: '',
-  dateNaissance: '',
-  
-  // Étape 2 : Cursus & Provenance
+  niveauEtude: '',
   etablissementProvenance: '',
-  dernierDiplome: '',
   classeSouhaitee: '',
-  serieFiliere: '', // Pour secondaire/supérieur
-  
-  // Étape 3 : Contacts & Santé
+  serieFiliere: '',
+  dernierDiplome: '',
   email: '',
   contact: '',
   adresse: '',
   donneesMedicales: '',
-  
-  // Étape 4 : Responsables (Conditionnel)
   parentNom: '',
   parentContact: '',
   urgenceNom: '',
   urgenceContact: '',
-  
-  // Documents
   files: {
     birthCertificate: null,
-    photo: null,
-    idCard: null
+    photo: null
   }
 })
 
-// Logique pour passer d'une étape à l'autre
-const nextStep = () => { if (currentStep.value < totalSteps) currentStep.value++ }
-const prevStep = () => { if (currentStep.value > 1) currentStep.value-- }
+const nextStep = () => currentStep.value++
+const prevStep = () => currentStep.value--
 
-const onSubmit = (e: Event) => {
-  e.preventDefault()
-  console.log('Final Data:', form.value)
-  // Appel API ici
+const onSubmit = () => {
+  console.log("Envoi du formulaire...", formData.value)
+  // Ici tu appelles ton API. Si succès :
+  isFinished.value = true
 }
 </script>
 
 <template>
-  <div class="w-full max-w-2xl mx-auto">
-    <div class="flex items-center justify-between mb-12">
-      <div v-for="s in totalSteps" :key="s" class="flex items-center relative">
-        <div 
-          :class="[
-            'w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-300',
+  <div class="w-full max-w-2xl mx-auto py-8">
+    
+    <template v-if="!isFinished">
+      <div class="mb-10 text-center lg:text-left animate-in fade-in duration-500">
+        <h1 class="text-3xl font-bold text-[#011c61]">{{ roleConfig.title }}</h1>
+        <p class="text-gray-500">{{ roleConfig.description }}</p>
+      </div>
+
+      <div class="flex items-center justify-between mb-12 px-4">
+        <div v-for="s in totalSteps" :key="s" class="flex items-center">
+          <div :class="[
+            'w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-500',
             currentStep >= s ? 'border-[#011c61] bg-[#011c61] text-white' : 'border-gray-200 text-gray-400'
-          ]"
-        >
-          <component :is="s === 1 ? User : s === 2 ? BookOpen : s === 3 ? Heart : FileText" class="w-5 h-5" />
+          ]">
+            {{ s }}
+          </div>
+          <div v-if="s < totalSteps" 
+            class="h-0.5 w-12 sm:w-20 mx-2 transition-all duration-500" 
+            :class="currentStep > s ? 'bg-[#011c61]' : 'bg-gray-100'">
+          </div>
         </div>
-        <div v-if="s < totalSteps" 
-          :class="['h-0.5 w-12 mx-2', currentStep > s ? 'bg-[#011c61]' : 'bg-gray-100']"
-        ></div>
       </div>
-    </div>
 
-    <form @submit.prevent="onSubmit" class="space-y-6">
-      
-      <div v-if="currentStep === 1" class="space-y-4 animate-in fade-in slide-in-from-right-4">
-        <h2 class="text-xl font-bold text-[#011c61] mb-4">Profil de l'apprenant</h2>
+      <div class="bg-white p-2">
+        <StepIdentity 
+          v-if="currentStep === 1" 
+          :formData="formData" 
+          :role="role" 
+          @next="nextStep" 
+        />
         
-        <div class="grid grid-cols-2 gap-4">
-          <div class="space-y-2">
-            <Label>Nom</Label>
-            <Input v-model="form.nom" placeholder="Ex: DOE" required />
-          </div>
-          <div class="space-y-2">
-            <Label>Prénoms</Label>
-            <Input v-model="form.prenoms" placeholder="Ex: John" required />
-          </div>
-        </div>
+        <StepAcademic 
+          v-if="currentStep === 2" 
+          :formData="formData" 
+          :role="role" 
+          @next="nextStep" 
+          @prev="prevStep" 
+        />
 
-        <div class="space-y-2">
-          <Label>Niveau d'étude</Label>
-          <select v-model="form.niveauEtude" class="w-full flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus:ring-[#011c61]">
-            <option value="maternelle">Maternelle</option>
-            <option value="primaire">Primaire</option>
-            <option value="secondaire">Secondaire</option>
-            <option value="superieur">Supérieur</option>
-          </select>
-        </div>
+        <StepContact 
+          v-if="currentStep === 3" 
+          :formData="formData" 
+          :role="role" 
+          @next="nextStep" 
+          @prev="prevStep" 
+        />
+
+        <StepFinal 
+          v-if="currentStep === 4" 
+          :formData="formData" 
+          :role="role" 
+          @prev="prevStep" 
+          @submit="onSubmit" 
+        />
       </div>
+    </template>
 
-      <div v-if="currentStep === 2" class="space-y-4">
-        <h2 class="text-xl font-bold text-[#011c61] mb-4">Parcours Scolaire</h2>
-        
-        <div class="space-y-2">
-          <Label>Établissement de provenance</Label>
-          <Input v-model="form.etablissementProvenance" />
-        </div>
+    <StepSuccess 
+      v-else 
+      :formData="formData" 
+      :role="role" 
+    />
 
-        <div v-if="form.niveauEtude === 'secondaire' || form.niveauEtude === 'superieur'" class="space-y-2">
-          <Label>{{ form.niveauEtude === 'superieur' ? 'Filière / Programme' : 'Série' }}</Label>
-          <Input v-model="form.serieFiliere" placeholder="Ex: Terminale C ou Informatique" />
-        </div>
-
-        <div class="space-y-2">
-          <Label>Classe demandée</Label>
-          <Input v-model="form.classeSouhaitee" placeholder="Ex: CE2, 3ème, Licence 1" />
-        </div>
-      </div>
-
-      <div v-if="currentStep === 3" class="space-y-4">
-        <h2 class="text-xl font-bold text-[#011c61] mb-4">Informations de contact & Santé</h2>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="space-y-2">
-            <Label>Email</Label>
-            <Input type="email" v-model="form.email" />
-          </div>
-          <div class="space-y-2">
-            <Label>Téléphone</Label>
-            <Input v-model="form.contact" />
-          </div>
-        </div>
-        <div class="space-y-2">
-          <Label>Données médicales (Allergies, Groupe Sanguin...)</Label>
-          <textarea v-model="form.donneesMedicales" class="w-full min-h-[100px] rounded-md border border-input px-3 py-2 text-sm focus:ring-[#011c61]"></textarea>
-        </div>
-      </div>
-
-      <div v-if="currentStep === 4" class="space-y-4">
-        <h2 class="text-xl font-bold text-[#011c61] mb-4">Responsables & Pièces</h2>
-        
-        <div v-if="form.niveauEtude === 'primaire' || form.niveauEtude === 'maternelle'" class="bg-blue-50 p-4 rounded-lg space-y-3">
-          <h3 class="font-semibold text-[#011c61] text-sm uppercase">Informations des Parents</h3>
-          <Input v-model="form.parentNom" placeholder="Nom complet du parent" />
-          <Input v-model="form.parentContact" placeholder="Téléphone du parent" />
-        </div>
-
-        <div v-else class="bg-red-50 p-4 rounded-lg space-y-3">
-          <h3 class="font-semibold text-red-600 text-sm uppercase">Personne à contacter en cas d'urgence</h3>
-          <Input v-model="form.urgenceNom" placeholder="Nom du contact d'urgence" />
-          <Input v-model="form.urgenceContact" placeholder="Téléphone d'urgence" />
-        </div>
-
-        <div class="space-y-2">
-          <Label>Acte de naissance (PDF/JPG)</Label>
-          <Input type="file" @change="(e : any) => form.files.birthCertificate = e.target.files[0]" />
-        </div>
-      </div>
-
-      <div class="flex justify-between pt-6 border-t border-gray-100">
-        <Button 
-          type="button" 
-          variant="outline" 
-          @click="prevStep" 
-          :disabled="currentStep === 1"
-          class="flex items-center gap-2"
-        >
-          <ArrowLeft class="w-4 h-4" /> Précédent
-        </Button>
-
-        <Button 
-          v-if="currentStep < totalSteps" 
-          type="button" 
-          @click="nextStep"
-          class="bg-[#011c61] hover:bg-[#011c61]/90 flex items-center gap-2"
-        >
-          Continuer <ArrowRight class="w-4 h-4" />
-        </Button>
-
-        <Button 
-          v-else 
-          type="submit" 
-          class="bg-red-600 hover:bg-red-700 flex items-center gap-2"
-        >
-          Valider l'inscription <Check class="w-4 h-4" />
-        </Button>
-      </div>
-    </form>
   </div>
 </template>

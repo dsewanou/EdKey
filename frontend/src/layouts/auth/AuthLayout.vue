@@ -3,28 +3,28 @@
     <div class="hidden lg:block lg:w-1/2 h-full">
       <AuthSlider />
     </div>
-<div class="w-full lg:w-1/2 h-full flex flex-col justify-center items-center px-8 md:px-16 xl:px-24 py-12">
-  
-  <div class="w-full max-w-[450px] flex flex-col">
-    
-    <header class="text-center lg:text-left"> 
-      <h1 class="text-3xl xl:text-4xl font-extrabold text-[#011c61] tracking-tight">
-        {{ title }}
-      </h1>
-      <p class="mt-4 text-gray-500 text-lg leading-relaxed mx-auto lg:mx-0">
-        {{ subtitle }}
-      </p>
-    </header>
 
-    <main class="py-10">
-      <div class="w-full">
-        <slot />
+    <div class="w-full lg:w-1/2 h-full flex flex-col items-center px-6 md:px-16 xl:px-20 py-6 overflow-y-auto">
+      
+      <div class="w-full max-w-[500px] flex flex-col my-auto">
+        
+        <header class="text-center lg:text-left"> 
+          <h1 class="text-2xl xl:text-3xl font-extrabold text-[#011c61] tracking-tight">
+            {{ title }}
+          </h1>
+          <p class="mt-2 text-gray-500 text-base leading-snug mx-auto lg:mx-0">
+            {{ subtitle }}
+          </p>
+        </header>
+
+        <main class="py-6">
+          <div class="w-full">
+            <slot />
+          </div>
+        </main>
+
       </div>
-    </main>
-
-  </div>
-
-</div>
+    </div>
   </div>
 </template>
 

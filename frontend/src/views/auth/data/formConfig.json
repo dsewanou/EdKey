@@ -1,0 +1,26 @@
+{
+  "levels": [
+    {"label": "Maternelle", "value": "maternelle"},
+    {"label": "Primaire", "value": "primaire"},
+    {"label": "Secondaire", "value": "secondaire"},
+    {"label": "Supérieur", "value": "superieur"}
+  ],
+  "classes": {
+    "maternelle": ["Petite Section", "Moyenne Section", "Grande Section"],
+    "primaire": ["CP", "CE1", "CE2", "CM1", "CM2"],
+    "secondaire": ["6ème", "5ème", "4ème", "3ème", "2nde", "1ère", "Terminale"],
+    "superieur": ["Licence 1", "Licence 2", "Licence 3", "Master 1", "Master 2"]
+  },
+  "roles": {
+    "parent": {
+      "title": "Inscription Parent",
+      "description": "Inscrivez votre enfant et gérez son parcours.",
+      "steps_titles": ["Identité Enfant", "Parcours", "Santé", "Responsable"]
+    },
+    "student": {
+      "title": "Inscription Apprenant",
+      "description": "Crée ton profil et rejoins ton établissement.",
+      "steps_titles": ["Mon Profil", "Mon Parcours", "Santé & Contact", "Documents"]
+    }
+  }
+}
