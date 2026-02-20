@@ -9,6 +9,16 @@ const MainRoutes = [
                 name: 'Modern',
                 component: () => import('../views/dashboards/Modern.vue'),
             },
+            {
+                name: 'Registration Dashboard',
+                path: '/dashboards/registration',
+                component: () => import('../views/dashboards/RegistrationDashboard.vue'),
+            },
+            {
+                name: 'Registration List',
+                path: '/modules/registrations/list',
+                component: () => import('../views/modules/registration/RegistrationList.vue'),
+            },
 
             {
                 name: 'Notes',

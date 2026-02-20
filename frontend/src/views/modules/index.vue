@@ -19,7 +19,7 @@ const modules: Module[] = [
     icon: "bi bi-person-check",
     title: "Inscriptions scolaires et universitaires",
     description: "Digitalisation complète des formalités d'inscription et de réinscription.",
-    route: "/authentication/register",
+    route: "/dashboards/registration",
     active: true,
   },
   {
@@ -182,7 +182,7 @@ function handleModuleClick(mod: Module) {
         <main class="flex-1">
 
           <!-- Hero Banner -->
-          <div class="relative overflow-hidden" style="background: linear-gradient(135deg, #1565C0 0%, #1976D2 30%, #42A5F5 70%, #1E88E5 100%);">
+          <div class="relative overflow-hidden" style="background: linear-gradient(135deg, #0a1e3b 0%, #102a5e 50%, #1e40af 100%);">
             <!-- Decorative blobs -->
             <div class="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-white/5 blur-3xl"></div>
             <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-white/5 blur-3xl"></div>
@@ -234,7 +234,7 @@ function handleModuleClick(mod: Module) {
                 <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-200 dark:bg-gray-700">
                   <span class="w-2 h-2 rounded-full bg-gray-400 dark:bg-gray-500"></span>
                 </span>
-                <span class="text-sm font-medium text-gray-600 dark:text-gray-300">Module à venir</span>
+                <span class="text-sm font-medium text-gray-600 dark:text-gray-300">Module à mettre à disposition après mise à jour de votre tarification</span>
               </div>
             </div>
 

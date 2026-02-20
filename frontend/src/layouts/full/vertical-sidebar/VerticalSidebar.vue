@@ -15,11 +15,8 @@ import LayoutVerticalSidebarNavGroup from "./NavGroup/NavGroup.vue";
 import LayoutVerticalSidebarNavCollapse from "./NavCollapse/NavCollapse.vue";
 import LayoutVerticalSidebarNavItems from "./NavItems/NavItems.vue";
 
+
 import LayoutLogo from "../logo/Logo.vue";
-
-import Button from "@/components/ui/button/Button.vue";
-import rocket from '@/assets/images/backgrounds/rocket.png'
-
 
 const isHovered = ref(false);
 onMounted(() => {
@@ -61,7 +58,7 @@ onMounted(() => {
   <Sidebar data-slot="sidebar" collapsible="icon" class="sidebar  bg-card pb-6"
     :class="{ 'shadow-sm z-[41] fixed': isHovered }" side="left">
     <!-- Brand Logo -->
-    <SidebarHeader class="pt-6 pb-5 relative whitespace-nowrap">
+    <SidebarHeader class="pt-6 pb-5 px-0 relative flex items-center justify-start overflow-hidden">
       <LayoutLogo />
     </SidebarHeader>
 
@@ -75,21 +72,6 @@ onMounted(() => {
             <LayoutVerticalSidebarNavItems v-else :item="item" />
           </template>
         </SidebarMenu>
-        <div class="mt-9 px-6 overflow-hidden">
-          <div class="flex w-full bg-lightprimary rounded-lg p-6">
-            <div class="lg:w-1/2 w-full">
-              <h5 class="text-base text-charcoal">
-                Haven't Account?
-              </h5>
-              <Button color="primary" size="sm" as="a" target="_blank" href="#"
-                class="whitespace-nowrap mt-2 text-[13px]">Get
-                Pro</Button>
-            </div>
-            <div class="lg:w-1/2 w-full -mt-4 ml-[26px] scale-[1.2] shrink-0">
-              <img :src="rocket" alt="rocket" />
-            </div>
-          </div>
-        </div>
       </simplebar>
     </SidebarContent>
   </Sidebar>
