@@ -1,6 +1,6 @@
 @extends('layouts.landing')
 
-@section('title', 'flex-IT | Contact Us')
+@section('title', 'EdKey | Contactez-nous')
 
 @section('content')
 
@@ -13,12 +13,12 @@
         <div class="overlay-color" data-bg-opacity=".75"></div>
         <div class="container">
             <div class="hero-text-area centerd">
-                <h1 class="hero-title  wow fadeInUp" data-wow-delay=".2s">Contact sales</h1>
+                <h1 class="hero-title  wow fadeInUp" data-wow-delay=".2s">Contactez-nous</h1>
                 <nav aria-label="breadcrumb ">
                     <ul class="breadcrumb wow fadeInUp" data-wow-delay=".6s">
                         <li class="breadcrumb-item"><a class="breadcrumb-link" href="{{ url('/') }}"><i
-                                    class="bi bi-house icon "></i>home</a></li>
-                        <li class="breadcrumb-item active">contact sales</li>
+                                    class="bi bi-house icon "></i>Présentation</a></li>
+                        <li class="breadcrumb-item active">Contactez-nous</li>
                     </ul>
                 </nav>
             </div>
@@ -32,27 +32,28 @@
             <section class="locations-section  mega-section ">
                 <div class="sec-heading centered  ">
                     <div class="content-area">
-                        <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">our offices around the world</h2>
+                        <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">Nos bureaux <span class="hollow-text">à
+                                travers</span> le <span class="featured-text">monde</span></h2>
                     </div>
                 </div>
                 <div class=" contact-info-panel ">
                     <div class="info-section ">
                         <div class="row">
                             @foreach ($offices as $office)
-                                <div class="col-12 col-lg-4">
+                                <div class="col-12 col-lg-4 mb-4">
                                     <div class="info-panel  wow fadeInUp" data-wow-delay="{{ $office['delay'] }}">
                                         <h4 class="location-title">{{ $office['city'] }}</h4>
                                         <div class="line-on-side "> </div>
                                         <p class="location-address">{{ $office['address'] }}</p>
-                                        <div class="location-card  "><i class="flaticon-email icon"></i>
+                                        <div class="location-card  "><i class="bi bi-envelope icon"></i>
                                             <div class="card-content">
-                                                <h6 class="content-title">email:</h6><a class="email link"
+                                                <h6 class="content-title">E-mail :</h6><a class="email link"
                                                     href="mailto:{{ $office['email'] }}">{{ $office['email'] }}</a>
                                             </div>
                                         </div>
-                                        <div class="location-card  "><i class="flaticon-phone-call icon"></i>
+                                        <div class="location-card  "><i class="bi bi-telephone icon"></i>
                                             <div class="card-content">
-                                                <h6 class="content-title">phone:</h6><a class="tel link"
+                                                <h6 class="content-title">Téléphone :</h6><a class="tel link"
                                                     href="tel:{{ str_replace(' ', '', $office['phone']) }}">{{ $office['phone'] }}</a>
                                             </div>
                                         </div>
@@ -67,14 +68,15 @@
             <section class="map-section  elf-section">
                 <div class="sec-heading  centered   ">
                     <div class="content-area">
-                        <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">find us on google maps</h2>
+                        <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">Retrouvez-nous sur <span
+                                class="featured-text">Google Maps</span></h2>
                     </div>
                 </div>
                 <div class="map-box  wow fadeInUp" data-wow-delay=".6s">
                     <div class="mapouter">
                         <div class="gmap_canvas">
                             <iframe class="map-iframe" id="gmap_canvas"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317718.69319292053!2d-0.3817765050863085!3d51.528307984912544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2seg!4v1613762954590!5m2!1sen!2seg"></iframe>
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15891.139622998188!2d2.3615286!3d6.3768853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023559385392e27%3A0xe546944883b4c9e7!2sAgla%2C%20Cotonou%2C%20Benin!5e0!3m2!1sen!2sbj!4v1700000000000!5m2!1sen!2sbj"></iframe>
                         </div>
                     </div>
                 </div>
@@ -86,8 +88,9 @@
                         <div class="contact-form-panel">
                             <div class="sec-heading centered    ">
                                 <div class="content-area">
-                                    <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">Have any questions? Let's
-                                        answer them</h2>
+                                    <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">Une question ? <span
+                                            class="hollow-text">Nous sommes</span> là pour vous <span
+                                            class="featured-text">répondre</span></h2>
                                 </div>
                             </div>
                             <div class="contact-form-inputs wow fadeInUp" data-wow-delay=".6s">
@@ -100,7 +103,7 @@
                                             <div class="col-12 col-lg-6">
                                                 <div class="   input-wrapper">
                                                     <input class="text-input" id="user-name" name="UserName" type="text" />
-                                                    <label class="input-label" for="user-name"> Name <span
+                                                    <label class="input-label" for="user-name"> Nom <span
                                                             class="req">*</span></label><span class="b-border"></span><span
                                                         class="error-msg"></span>
                                                 </div>
@@ -117,7 +120,7 @@
                                             <div class="col-12 ">
                                                 <div class="   input-wrapper">
                                                     <input class="text-input" id="msg-subject" name="subject" type="text" />
-                                                    <label class="input-label" for="msg-subject"> Subject <span
+                                                    <label class="input-label" for="msg-subject"> Sujet <span
                                                             class="req">*</span></label><span class="b-border"></span><span
                                                         class="error-msg"></span>
                                                 </div>
@@ -125,14 +128,14 @@
                                             <div class="col-12 ">
                                                 <div class="   input-wrapper">
                                                     <textarea class=" text-input" id="msg-text" name="message"></textarea>
-                                                    <label class="input-label" for="msg-text"> your message <span
+                                                    <label class="input-label" for="msg-text"> Votre message <span
                                                             class="req">*</span></label><span
                                                         class="b-border"></span><i></i><span class="error-msg"></span>
                                                 </div>
                                             </div>
                                             <div class="col-12 submit-wrapper">
                                                 <button class=" btn-solid" id="submit-btn" type="submit"
-                                                    name="UserSubmit">Send your message</button>
+                                                    name="UserSubmit">Envoyer le message</button>
                                             </div>
                                         </div>
                                     </form>

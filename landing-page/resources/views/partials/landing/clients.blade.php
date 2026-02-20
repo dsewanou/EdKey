@@ -2,7 +2,8 @@
     <div class="container">
         <div class="sec-heading   centered ">
             <div class="content-area">
-                <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">trusted by over 500 clients around the world
+                <h2 class=" title    wow fadeInUp" data-wow-delay=".4s">Plus de 500 établissements nous font confiance à
+                    travers le monde
                 </h2>
             </div>
         </div>

@@ -3,84 +3,85 @@
         data-bg-opacity=".25"></div>
     <div class="container">
         <div class="row footer-cols">
-            <div class="col-12 col-md-8 col-lg-4  footer-col "><img class="img-fluid footer-logo" loading="lazy"
+            <div class="col-12 col-md-8 col-lg-4  footer-col "><img class="img-fluid footer-logo mb-1" loading="lazy"
                     src="{{ asset('assets/images/logo/logo-colored.png') }}" alt="logo" />
                 <div class="footer-col-content-wrapper">
                     <p class="footer-text-about-us ">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                        Voluptatibus facere modi possimus dignissimos,
-                        aliquam nobis eaque? Voluptatem magnam quisquam rem.
+                        EdKey est votre partenaire de confiance pour la transformation digitale de votre établissement
+                        d'enseignement.
                     </p>
                 </div>
-                <div class="form-area ">
+                <!-- <div class="form-area ">
                     <div class="mailchimp-form ">
                         <form class="one-field-form" method="post" action="#0">
                             <div class="field-group ">
-                                <label class="email-label" for="email-input"> Subscribe to our news letter</label>
+                                <label class="email-label" for="email-input"> S'inscrire à notre newsletter</label>
                                 <input class="email-input " type="email" value="" name="EMAIL" id="email-input"
-                                    placeholder="Email Address" autocomplete="off" />
+                                    placeholder="Adresse E-mail" autocomplete="off" />
                                 <div class="cta-area">
-                                    <input class="btn-solid subscribe-btn" type="submit" value="Subscribe"
+                                    <input class="btn-solid subscribe-btn" type="submit" value="S'abonner"
                                         name="subscribe" />
                                 </div>
-                            </div><span class="email-notice">*we will not share your personal info</span>
+                            </div><span class="email-notice">*Nous ne partageons pas vos informations
+                                personnelles</span>
                         </form>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="col-6 col-lg-2  footer-col ">
-                <h2 class=" footer-col-title    ">useful links</h2>
+                <h2 class=" footer-col-title    ">Liens utiles</h2>
                 <div class="footer-col-content-wrapper">
                     <ul class="footer-menu ">
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
-                                href="#0">Google</a></li>
+                                href="{{ url('/') }}">Présentation</a></li>
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
-                                href="#0">Dribbble</a></li>
+                                href="{{ url('/') }}#about">À propos</a></li>
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
-                                href="#0">linkedIn</a></li>
+                                href="{{ url('/') }}#services">Fonctionnalités</a></li>
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
-                                href="#0">wikipedia</a></li>
+                                href="{{ url('/pricing') }}">Tarifs</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-6 col-lg-2 footer-col ">
-                <h2 class=" footer-col-title    ">Resources</h2>
+                <h2 class=" footer-col-title    ">Ressources</h2>
                 <div class="footer-col-content-wrapper">
                     <ul class="footer-menu">
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
-                                href="#0">support</a></li>
+                                href="{{ url('/support') }}">Support</a></li>
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
-                                href="#0">dashboard</a></li>
+                                href="{{ url('/') }}#portfolio">Ressources</a></li>
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
-                                href="#0">drivers</a></li>
+                                href="{{ url('/faq') }}">FAQ</a></li>
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
-                                href="#0">projects</a></li>
+                                href="{{ url('/contact-us') }}">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-12     col-lg-4 footer-col ">
-                <h2 class=" footer-col-title    ">contact information</h2>
+                <h2 class=" footer-col-title    ">Informations de contact</h2>
                 <div class="footer-col-content-wrapper">
                     <div class="contact-info-card"><i class="bi bi-envelope icon"></i><a class="text-lowercase  info"
-                            href="mailto:example@support.com">example@support.com</a></div>
+                            href="mailto:akasi-group@akasigroup.com">akasi-group@akasigroup.com</a></div>
                     <div class="contact-info-card"><i class="bi bi-geo-alt icon"></i><span
-                            class="text-lowercase  info">5 Xyz st., Abc, alexandria, egypt.</span></div>
+                            class="text-lowercase  info">Agla Cotonou, 4ème bâtiment derrière le commissariat,
+                            Bénin.</span></div>
                     <div class="contact-info-card"><i class="bi bi-phone icon"></i><a class="info"
-                            href="tel:+20123456789">+20123456789 </a></div>
-                    <div class="social-icons mt-3">
+                            href="tel:+2290195621919">+229 01 95 62 19 19 </a></div>
+                    <!-- <div class="social-icons mt-3">
                         <div class="sc-wrapper dir-row sc-size-32">
                             <ul class="sc-list">
                                 <li class="sc-item " title="Facebook"><a class="sc-link" href="#0"
-                                        title="social media icon"><i class="fab fa-facebook-f sc-icon"></i></a></li>
+                                        title="social media icon"><i class="bi bi-facebook sc-icon"></i></a></li>
                                 <li class="sc-item " title="youtube"><a class="sc-link" href="#0"
-                                        title="social media icon"><i class="fab fa-youtube sc-icon"></i></a></li>
+                                        title="social media icon"><i class="bi bi-youtube sc-icon"></i></a></li>
                                 <li class="sc-item " title="instagram"><a class="sc-link" href="#0"
-                                        title="social media icon"><i class="fab fa-instagram sc-icon"></i></a></li>
+                                        title="social media icon"><i class="bi bi-instagram sc-icon"></i></a></li>
                                 <li class="sc-item " title="X"><a class="sc-link" href="#0" title="social media icon"><i
-                                            class="fab fa-x-twitter sc-icon"></i></a></li>
+                                            class="bi bi-twitter-x sc-icon"></i></a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -89,10 +90,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6 d-flex justify-content-start">
-                    <p class="creadits">&copy; 2024 Created by: <a class="link" href="#0">amin-themes</a></p>
+                    <p class="creadits">&copy; 2026 AKASI GROUP. Tous droits réservés.</p>
                 </div>
                 <div class="col-12 col-md-6 d-flex justify-content-end">
-                    <div class="terms-links"><a href="#0">Terms of Use </a> | <a href="#0">Privacy Policy.</a></div>
+                    <div class="terms-links">
+                        <a href="{{ url('/mentions-legales') }}">Mentions légales</a> |
+                        <a href="{{ url('/conditions-utilisation') }}">Conditions d'utilisation</a> |
+                        <a href="{{ url('/politique-confidentialite') }}">Politique de confidentialité</a> |
+                        <a href="{{ url('/politique-cookies') }}">Cookies</a>
+                    </div>
                 </div>
             </div>
         </div>
