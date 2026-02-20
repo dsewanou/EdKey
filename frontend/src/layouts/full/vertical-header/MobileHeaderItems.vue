@@ -3,6 +3,15 @@
     <!-- Theme Toggle -->
     <ThemeToggler />
 
+    <!-- Pricing Trigger -->
+    <button 
+      @click="$emit('open-pricing')"
+      class="p-2 rounded-full hover:text-primary dark:hover:text-primary relative hover:bg-lightprimary"
+      title="Tarifs"
+    >
+      <IconifyIcon icon="solar:tag-price-bold-duotone" class="!h-5 !w-5" />
+    </button>
+
     <!-- Messages Dropdown -->
     <NotificationDD />
 
@@ -17,4 +26,6 @@ import { Icon as IconifyIcon } from '@iconify/vue'
 import ThemeToggler from './ThemeToggler.vue'
 import NotificationDD from './NotificationDD.vue';
 import ProfileDD from './ProfileDD.vue';
+
+defineEmits(['open-pricing']);
 </script>
