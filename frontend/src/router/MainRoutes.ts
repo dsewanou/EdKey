@@ -1,7 +1,7 @@
 
 const MainRoutes = [
     {
-        path: '/',
+        path: '/modules',
         component: () => import('../layouts/full/FullLayout.vue'),
         children: [
             {

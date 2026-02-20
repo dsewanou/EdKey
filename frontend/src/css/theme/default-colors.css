@@ -49,29 +49,21 @@
   --color-gray-emphasis: oklch(0.73 0.0301 246.6);
   --color-light-emphasis: oklch(0.9203 0.015 260.73);
 
-  --color-primary: oklch(0.6533 0.1838 266.79);
+  --color-primary: oklch(0.45 0.14 253);
   --color-secondary: oklch(0.7632 0.139 237.2);
-  --color-primary-emphasis: color-mix(
-    in oklab,
-    var(--color-primary) 80%,
-    black
-  );
-  --color-secondary-emphasis: color-mix(
-    in oklab,
-    var(--color-secondary) 80%,
-    black
-  );
-    
-  --color-lightprimary: color-mix(
-    in oklab,
-    var(--color-primary) 12%,
-    transparent
-  );
-  --color-lightsecondary: color-mix(
-    in oklab,
-    var(--color-secondary) 12%,
-    transparent
-  );
+  --color-primary-emphasis: color-mix(in oklab,
+      var(--color-primary) 80%,
+      black);
+  --color-secondary-emphasis: color-mix(in oklab,
+      var(--color-secondary) 80%,
+      black);
+
+  --color-lightprimary: color-mix(in oklab,
+      var(--color-primary) 12%,
+      transparent);
+  --color-lightsecondary: color-mix(in oklab,
+      var(--color-secondary) 12%,
+      transparent);
 
   /* ShadCN Compnent */
 
@@ -115,4 +107,3 @@
 
 
 }
-

@@ -20,8 +20,9 @@
                         <div class="service-content">
                             <h3 class="service-title">{{ $service['title'] }}</h3>
                             <p class="service-text">{{ $service['text'] }}</p>
-                        </div><a class="read-more" href="{{ $service['url'] }}">Découvrir<i
-                                class="bi bi-arrow-right icon "></i></a>
+                        </div>
+                        <!-- <a class="read-more" href="{{ $service['url'] }}">Découvrir<i
+                                class="bi bi-arrow-right icon "></i></a> -->
                     </div>
                     <!-- End service box-->
                 </div>
