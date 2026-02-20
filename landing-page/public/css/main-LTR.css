@@ -6062,7 +6062,7 @@ body.rounded-btns .read-more {
 }
 
 .pricing .plan.featured:before {
-  content: "most poupular";
+  content: "Plus populaire";
   display: inline-block;
   padding: 0.25rem 5rem;
   color: var(--clr-main);
@@ -6252,6 +6252,55 @@ body.dark-theme .about .cta-area .signature .signature-img {
 
 body.dark-theme .about .stats-counter.stats-cards .stat-box {
   background: var(--clr-semi-dark-blue);
+}
+
+/* Resources Section Refinements */
+.resource-card {
+  background: rgba(9, 175, 244, 0.03) !important;
+  border: 1px solid rgba(9, 175, 244, 0.1) !important;
+}
+
+.resource-card-title {
+  color: var(--clr-accent) !important;
+}
+
+.resource-card:hover {
+  transform: translateY(-12px) !important;
+  background: rgba(9, 175, 244, 0.06) !important;
+  border-color: rgba(var(--clr-main-rgb), 0.3) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.resource-card:hover .resource-icon {
+  transform: scale(1.1);
+  background: rgba(var(--clr-main-rgb), 0.25) !important;
+}
+
+.resource-card:hover .cta-arrow {
+  transform: translateX(5px);
+}
+
+.resource-card .cta-link:hover {
+  color: var(--clr-main) !important;
+}
+
+/* Dark Theme Overrides */
+body.dark-theme .resource-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-theme .resource-card-title {
+  color: var(--clr-white) !important;
+}
+
+body.dark-theme .resource-card:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .resource-card .cta-link:hover {
+  color: var(--clr-white) !important;
 }
 
 /*    End dark theme rules  */

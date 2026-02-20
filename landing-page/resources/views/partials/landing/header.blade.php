@@ -22,51 +22,40 @@
                                 <ul class="list-js links-list">
                                         <li class="menu-item"><a
                                                         class="menu-link {{ Request::is('/') ? 'active' : '' }}"
-                                                        href="{{ url('/') }}">Product Overview</a>
+                                                        href="{{ url('/') }}">Présentation</a>
                                         </li>
-                                        <li class="menu-item has-sub-menu"><a class="menu-link" href="{{ url('/') }}#services">Features</a>
-                                                
+                                        <li class="menu-item has-sub-menu"><a class="menu-link"
+                                                        href="{{ url('/') }}#services">Fonctionnalités</a>
+
                                         </li>
-                                         <li class="menu-item"><a
+                                        <li class="menu-item"><a
                                                         class="menu-link {{ Request::is('pricing') ? 'active' : '' }}"
-                                                        href="{{ url('/pricing') }}">pricing plans</a>
+                                                        href="{{ url('/pricing') }}">Tarifs</a>
                                         </li>
-                                        <li class="menu-item has-sub-menu"><a class="menu-link" href="{{ url('/') }}#portfolio">Resource</a>
-                                                <ul class="sub-menu ">
+                                        <li class="menu-item has-sub-menu"><a class="menu-link"
+                                                        href="{{ url('/') }}#portfolio">Ressources</a>
+                                                <!-- <ul class="sub-menu ">
                                                         <li class="menu-item sub-menu-item"><a
                                                                         class="menu-link sub-menu-link  "
                                                                         href="#">Documentation API</a></li>
                                                         <li class="menu-item sub-menu-item"><a
                                                                         class="menu-link sub-menu-link  "
-                                                                        href="#">FAQ</a></li>
-                                                        <!-- <li class="menu-item sub-menu-item"><a
-                                                                        class="menu-link sub-menu-link  "
-                                                                        href="#">portfolio single</a></li> -->
-                                                </ul>
-                                        </li>
-                                        <li class="menu-item has-sub-menu"><a class="menu-link" href="{{ url('/') }}#blog">Support</a>
-                                                <!-- <ul class="sub-menu ">
-                                                        <li class="menu-item sub-menu-item"><a
-                                                                        class="menu-link sub-menu-link  " href="#">blog
-                                                                        home 1 colmun</a></li>
-                                                        <li class="menu-item sub-menu-item"><a
-                                                                        class="menu-link sub-menu-link  " href="#">blog
-                                                                        home 2 columns</a></li>
-                                                        <li class="menu-item sub-menu-item"><a
-                                                                        class="menu-link sub-menu-link  " href="#">blog
-                                                                        home 3 columns</a></li>
-                                                        <li class="menu-item sub-menu-item"><a
-                                                                        class="menu-link sub-menu-link  "
-                                                                        href="#">single post</a></li>
+                                                                        href="{{ url('/faq') }}">FAQ</a></li>
                                                 </ul> -->
                                         </li>
-                                       
+                                        <li class="menu-item has-sub-menu"><a class="menu-link"
+                                                        href="{{ url('/support') }}">Support</a>
+                                        </li>
+
                                         <li class="menu-item"><a
                                                         class="menu-link {{ Request::is('contact-us') ? 'active' : '' }}"
-                                                        href="{{ url('/contact-us') }}">contact sales </a></li>
-                                        <li class="menu-item"><a class="btn-solid btn-small" href="#">Accedez gratuitement</a>
+                                                        href="{{ url('/contact-us') }}">Contact</a></li>
+                                        <li class="menu-item"><a
+                                                        class="btn-solid btn-small w-100 w-lg-auto mb-3 mb-lg-0"
+                                                        href="#">Acceder gratuitement</a>
                                         </li>
-                                        <li class="menu-item"><a class="btn-outline btn-small" href="#">Connexion</a>
+                                        <li class="menu-item"><a class="btn-outline btn-small w-100 w-lg-auto"
+                                                        href="#">Connexion</a>
                                         </li>
                                 </ul>
                         </div>
@@ -74,7 +63,6 @@
                                 <!--Menu Toggler button-->
                                 <div class="control  menu-toggler"><span></span><span></span><span></span></div>
                                 <!--search Icon button-->
-                                <div class="control header-search-btn"><i class="bi bi-search icon"></i></div>
                                 <!--Dark/Light mode button-->
                                 <div class="mode-switcher ">
                                         <div class="switch-inner go-light " title="Switch To Light Mode "><i
