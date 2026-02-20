@@ -32,7 +32,7 @@ class LandingPageController extends Controller
                     'subtitle' => 'Une plateforme moderne et intuitive pour simplifier le quotidien de vos équipes.',
                     'ctas' => [
                         ['class' => 'btn-solid cta-link cta-link-primary', 'url' => '#0', 'text' => 'Commencer maintenant'],
-                        ['class' => 'btn-outline cta-link', 'url' => '#0', 'text' => 'Découvrir plus'],
+                        ['class' => 'btn-outline cta-link', 'url' => '/contact-us', 'text' => 'Contactez-nous'],
                     ]
                 ],
                 [

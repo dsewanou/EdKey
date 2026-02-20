@@ -20,15 +20,15 @@
                     @foreach($portfolioItems as $item)
                         <div class="col-12 col-md-6 col-lg-4 portfolio-item {{ $item['category_slug'] }} mb-4">
                             <div class="item resource-card h-100 p-4 d-flex flex-column align-items-center text-center"
-                                style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 1.25rem; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); backdrop-filter: blur(10px); position: relative; overflow: visible;">
+                                style="border-radius: 1.25rem; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); backdrop-filter: blur(10px); position: relative; overflow: visible;">
                                 <div class="resource-icon mb-4 d-flex align-items-center justify-content-center"
                                     style="width: 70px; height: 70px; background: rgba(var(--clr-main-rgb), 0.1); border-radius: 50%; transition: all 0.4s ease;">
                                     <i class="{{ $item['icon'] }}" style="font-size: 2.2rem; color: var(--clr-main);"></i>
                                 </div>
                                 <div class="item-info p-0 mb-4 flex-grow-1"
                                     style="position: relative; width: 100%; height: auto; bottom: auto; transform: none; visibility: visible; opacity: 1; pointer-events: auto;">
-                                    <h3 class="item-title mb-0"
-                                        style="font-size: 1.4rem; font-weight: 700; color: #fff; transform: none; position: relative; padding: 0; background: transparent; height: auto; text-align: center; display: block;">
+                                    <h3 class="item-title resource-card-title mb-0"
+                                        style="font-size: 1.4rem; font-weight: 700; transform: none; position: relative; padding: 0; background: transparent; height: auto; text-align: center; display: block;">
                                         {{ $item['title'] }}
                                     </h3>
                                 </div>
