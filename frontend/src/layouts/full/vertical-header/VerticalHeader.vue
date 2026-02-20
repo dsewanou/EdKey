@@ -25,13 +25,16 @@
       <div class="flex items-center space-x-2">
 
         <!-- Desktop only -->
-        <div class="hidden xl:flex items-center space-x-2">
+        <div class="hidden xl:flex items-center space-x-3">
           <button 
             @click="isPricingModalOpen = true"
-            class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors border border-gray-200 dark:border-gray-800 rounded-xl hover:bg-lightprimary"
+            class="group relative flex items-center gap-2 px-5 py-2.5 text-sm font-bold text-white transition-all duration-300 rounded-xl overflow-hidden shadow-lg hover:shadow-primary/40 active:scale-95 bg-linear-to-r from-primary via-[#5d87ff] to-primary bg-[length:200%_auto] hover:bg-right"
           >
-            <i class="bi bi-tags"></i>
-            Tarifs
+            <!-- Pulse effect -->
+            <span class="absolute inset-0 rounded-xl bg-white/20 animate-ping opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            
+            <i class="bi bi-patch-check-fill text-lg group-hover:rotate-12 transition-transform"></i>
+            <span>Mettre à jour Tarifications</span>
           </button>
           
           <ThemeToggler />
