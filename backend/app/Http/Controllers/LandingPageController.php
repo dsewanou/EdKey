@@ -92,7 +92,7 @@ class LandingPageController extends Controller
             'portfolioCategories' => [
                 ['name' => 'Guides & Manuels', 'slug' => 'guides'],
                 ['name' => 'Tutoriels Vidéo', 'slug' => 'tutorials'],
-                ['name' => 'FAQ & Support', 'slug' => 'support'],
+                ['name' => 'FAQ', 'slug' => 'support'],
             ],
             'portfolioItems' => [
                 [
