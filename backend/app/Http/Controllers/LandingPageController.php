@@ -131,11 +131,11 @@ class LandingPageController extends Controller
                     'url' => '#',
                 ],
                 [
-                    'title' => 'FAQ',
-                    'description' => 'Trouvez les réponses aux questions fréquentes et contactez l\'assistance.',
-                    'icon' => 'bi bi-question-circle',
+                    'title' => 'Assistance Technique',
+                    'description' => 'Notre équipe technique est à votre écoute pour vous accompagner et résoudre vos besoins.',
+                    'icon' => 'bi bi-headset',
                     'category_slug' => 'support',
-                    'url' => '/faq',
+                    'url' => '/support',
                 ],
             ],
             'testimonials' => [
@@ -339,5 +339,11 @@ class LandingPageController extends Controller
                 ],
             ],
         ];
+    }
+
+    public function support()
+    {
+        $data = $this->getLandingPageData();
+        return view('pages.support', $data);
     }
 }

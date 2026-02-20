@@ -33,7 +33,7 @@
                 <div class="footer-col-content-wrapper">
                     <ul class="footer-menu ">
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
-                                href="{{ url('/') }}">Accueil</a></li>
+                                href="{{ url('/') }}">Présentation</a></li>
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
                                 href="{{ url('/') }}#about">À propos</a></li>
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
@@ -48,7 +48,7 @@
                 <div class="footer-col-content-wrapper">
                     <ul class="footer-menu">
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
-                                href="#">Support</a></li>
+                                href="{{ url('/support') }}">Support</a></li>
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
                                 href="#">Documentation API</a></li>
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"

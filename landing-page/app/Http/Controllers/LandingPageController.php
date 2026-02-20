@@ -32,6 +32,12 @@ class LandingPageController extends Controller
         return view('pages.faq', $data);
     }
 
+    public function support()
+    {
+        $data = $this->getLandingPageData();
+        return view('pages.support', $data);
+    }
+
     public function apiData()
     {
         return response()->json($this->getLandingPageData());

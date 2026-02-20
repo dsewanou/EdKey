@@ -44,7 +44,7 @@
                                                 </ul> -->
                                         </li>
                                         <li class="menu-item has-sub-menu"><a class="menu-link"
-                                                        href="{{ url('/') }}#blog">Support</a>
+                                                        href="{{ url('/support') }}">Support</a>
                                         </li>
 
                                         <li class="menu-item"><a

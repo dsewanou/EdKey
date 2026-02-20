@@ -17,7 +17,7 @@
                 <nav aria-label="breadcrumb ">
                     <ul class="breadcrumb wow fadeInUp" data-wow-delay=".6s">
                         <li class="breadcrumb-item"><a class="breadcrumb-link" href="{{ url('/') }}"><i
-                                    class="bi bi-house icon "></i>Accueil</a></li>
+                                    class="bi bi-house icon "></i>Présentation</a></li>
                         <li class="breadcrumb-item active">Contactez-nous</li>
                     </ul>
                 </nav>
