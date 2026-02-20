@@ -38,6 +38,30 @@ class LandingPageController extends Controller
         return view('pages.support', $data);
     }
 
+    public function legalNotice()
+    {
+        $data = $this->getLandingPageData();
+        return view('pages.legal-notice', $data);
+    }
+
+    public function cookiesPolicy()
+    {
+        $data = $this->getLandingPageData();
+        return view('pages.cookies-policy', $data);
+    }
+
+    public function termsOfService()
+    {
+        $data = $this->getLandingPageData();
+        return view('pages.terms-of-service', $data);
+    }
+
+    public function privacyPolicy()
+    {
+        $data = $this->getLandingPageData();
+        return view('pages.privacy-policy', $data);
+    }
+
     public function apiData()
     {
         return response()->json($this->getLandingPageData());

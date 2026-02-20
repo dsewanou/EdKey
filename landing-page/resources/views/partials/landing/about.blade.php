@@ -29,8 +29,7 @@
               </div>
             </div>
             <div class="cta-area">
-              <a class="btn-solid reveal-start"
-                href="{{ $about['vision']['cta_url'] }}">{{ $about['vision']['cta_text'] }}</a>
+              <a class="btn-solid reveal-start" href="{{ url('/contact-us') }}">Contactez-nous</a>
             </div>
           </div>
         </div>
@@ -79,8 +78,7 @@
               </div>
             </div>
             <div class="cta-area">
-              <a class="btn-solid"
-                href="{{ $about['why_choose_us']['cta_url'] }}">{{ $about['why_choose_us']['cta_text'] }}</a>
+              <a class="btn-solid" href="{{ url('/contact-us') }}">Contactez-nous</a>
             </div>
           </div>
         </div>

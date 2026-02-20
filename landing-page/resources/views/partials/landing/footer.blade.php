@@ -50,9 +50,9 @@
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
                                 href="{{ url('/support') }}">Support</a></li>
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
-                                href="#">Documentation API</a></li>
+                                href="{{ url('/') }}#portfolio">Ressources</a></li>
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
-                                href="#">FAQ</a></li>
+                                href="{{ url('/faq') }}">FAQ</a></li>
                         <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link"
                                 href="{{ url('/contact-us') }}">Contact</a></li>
                     </ul>
@@ -93,8 +93,12 @@
                     <p class="creadits">&copy; 2026 AKASI GROUP. Tous droits réservés.</p>
                 </div>
                 <div class="col-12 col-md-6 d-flex justify-content-end">
-                    <div class="terms-links"><a href="#0">Conditions d'utilisation</a> | <a href="#0">Politique de
-                            confidentialité</a></div>
+                    <div class="terms-links">
+                        <a href="{{ url('/mentions-legales') }}">Mentions légales</a> |
+                        <a href="{{ url('/conditions-utilisation') }}">Conditions d'utilisation</a> |
+                        <a href="{{ url('/politique-confidentialite') }}">Politique de confidentialité</a> |
+                        <a href="{{ url('/politique-cookies') }}">Cookies</a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -43,9 +43,7 @@
     @include('partials.landing.faq')
     <!-- End FAQ Section-->
 
-    <!-- Start blog Section-->
-    @include('partials.landing.blog')
-    <!-- End blog Section-->
+
 
     <!-- Start page-footer Section-->
     @include('partials.landing.footer')
