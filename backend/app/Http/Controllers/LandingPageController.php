@@ -90,15 +90,53 @@ class LandingPageController extends Controller
                 ['icon' => 'bi bi-calendar3', 'number' => 28, 'label' => 'Années d\'expérience'],
             ],
             'portfolioCategories' => [
-                ['name' => 'mobile apps', 'slug' => 'mobile'],
-                ['name' => 'cloud', 'slug' => 'web'],
-                ['name' => 'data analysis', 'slug' => 'data'],
-                ['name' => 'hosting', 'slug' => 'hosting'],
+                ['name' => 'Guides & Manuels', 'slug' => 'guides'],
+                ['name' => 'Tutoriels Vidéo', 'slug' => 'tutorials'],
+                ['name' => 'FAQ & Support', 'slug' => 'support'],
             ],
             'portfolioItems' => [
-                ['title' => 'mobile apps', 'category_slug' => 'mobile', 'image' => 'assets/images/portfolio/1.jpg'],
-                ['title' => 'cloud', 'category_slug' => 'web', 'image' => 'assets/images/portfolio/2.jpg'],
-                ['title' => 'data analysis', 'category_slug' => 'data', 'image' => 'assets/images/portfolio/3.jpg'],
+                [
+                    'title' => 'Guide de l\'administrateur',
+                    'description' => 'Apprenez à configurer votre établissement et à gérer les accès utilisateurs.',
+                    'icon' => 'bi bi-gear',
+                    'category_slug' => 'guides',
+                    'url' => '#',
+                ],
+                [
+                    'title' => 'Manuel de l\'enseignant',
+                    'description' => 'Gérez vos notes, vos cours et vos appels depuis votre espace dédié.',
+                    'icon' => 'bi bi-journal-text',
+                    'category_slug' => 'guides',
+                    'url' => '#',
+                ],
+                [
+                    'title' => 'Guide du parent',
+                    'description' => 'Suivez la progression et les bulletins de vos enfants en temps réel.',
+                    'icon' => 'bi bi-people',
+                    'category_slug' => 'guides',
+                    'url' => '#',
+                ],
+                [
+                    'title' => 'Vidéo : Inscriptions',
+                    'description' => 'Une démonstration pas-à-pas pour réussir vos inscriptions numériques.',
+                    'icon' => 'bi bi-play-circle',
+                    'category_slug' => 'tutorials',
+                    'url' => '#',
+                ],
+                [
+                    'title' => 'Documentation API',
+                    'description' => 'Accédez aux ressources techniques pour intégrer vos solutions avec EdKey.',
+                    'icon' => 'bi bi-code-slash',
+                    'category_slug' => 'guides',
+                    'url' => '#',
+                ],
+                [
+                    'title' => 'FAQ',
+                    'description' => 'Trouvez les réponses aux questions fréquentes et contactez l\'assistance.',
+                    'icon' => 'bi bi-question-circle',
+                    'category_slug' => 'support',
+                    'url' => '/faq',
+                ],
             ],
             'testimonials' => [
                 ['name' => 'Yusuf Amin', 'role' => 'Fondateur', 'image' => 'assets/images/testimonials/1.png', 'text' => 'EdKey a transformé notre gestion quotidienne. La simplicité d\'utilisation et la réactivité du support sont exceptionnelles.'],
@@ -272,6 +310,32 @@ class LandingPageController extends Controller
                     'email' => 'akasi-group@akasigroup.com',
                     'phone' => '+1 603 852 79 35',
                     'delay' => '1s'
+                ],
+            ],
+            'faqs' => [
+                [
+                    'question' => 'Vos services sont-ils faciles à utiliser ?',
+                    'answer' => 'Oui, EdKey est conçu avec une interface intuitive pour que les parents, enseignants et administrateurs puissent l\'utiliser sans formation technique complexe.'
+                ],
+                [
+                    'question' => 'Recevrai-je des mises à jour futures ?',
+                    'answer' => 'Absolument. Nous mettons régulièrement à jour la plateforme avec de nouvelles fonctionnalités et des correctifs de sécurité pour garantir la meilleure expérience possible.'
+                ],
+                [
+                    'question' => 'Le service fonctionne-t-il dans mon pays ?',
+                    'answer' => 'EdKey est une solution cloud accessible partout dans le monde. Nous avons des bureaux au Canada, au Kenya, au Bénin, en Côte d\'Ivoire et aux USA pour un support local.'
+                ],
+                [
+                    'question' => 'Combien vais-je payer ?',
+                    'answer' => 'Nous proposons plusieurs tarifs adaptés à la taille de votre établissement, allant de l\'offre Basique gratuite à l\'offre Élite personnalisée.'
+                ],
+                [
+                    'question' => 'Y a-t-il d\'autres frais ?',
+                    'answer' => 'Nos tarifs sont transparents. Il n\'y a pas de frais cachés. Les coûts dépendent du plan choisi et du nombre d\'utilisateurs.'
+                ],
+                [
+                    'question' => 'Comment puis-je m\'inscrire ?',
+                    'answer' => 'Vous pouvez nous contacter directement via notre formulaire de contact ou demander une démo pour commencer votre transformation digitale.'
                 ],
             ],
         ];

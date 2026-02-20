@@ -34,14 +34,14 @@
                                         </li>
                                         <li class="menu-item has-sub-menu"><a class="menu-link"
                                                         href="{{ url('/') }}#portfolio">Ressources</a>
-                                                <ul class="sub-menu ">
+                                                <!-- <ul class="sub-menu ">
                                                         <li class="menu-item sub-menu-item"><a
                                                                         class="menu-link sub-menu-link  "
                                                                         href="#">Documentation API</a></li>
                                                         <li class="menu-item sub-menu-item"><a
                                                                         class="menu-link sub-menu-link  "
-                                                                        href="#">FAQ</a></li>
-                                                </ul>
+                                                                        href="{{ url('/faq') }}">FAQ</a></li>
+                                                </ul> -->
                                         </li>
                                         <li class="menu-item has-sub-menu"><a class="menu-link"
                                                         href="{{ url('/') }}#blog">Support</a>

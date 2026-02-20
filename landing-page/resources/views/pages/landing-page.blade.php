@@ -9,7 +9,7 @@
     <!-- Start Page hero-->
     @include('partials.landing.hero')
     <!-- End Page hero-->
-    
+
     <!-- Start about Section-->
     @include('partials.landing.about')
     <!-- End about Section-->
@@ -38,6 +38,10 @@
     <!-- Start testimonials Section-->
     @include('partials.landing.testimonials')
     <!-- End testimonials Section-->
+
+    <!-- Start FAQ Section-->
+    @include('partials.landing.faq')
+    <!-- End FAQ Section-->
 
     <!-- Start blog Section-->
     @include('partials.landing.blog')

@@ -6254,5 +6254,26 @@ body.dark-theme .about .stats-counter.stats-cards .stat-box {
   background: var(--clr-semi-dark-blue);
 }
 
+/* Resources Section Refinements */
+.resource-card:hover {
+  transform: translateY(-12px) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(var(--clr-main-rgb), 0.3) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.resource-card:hover .resource-icon {
+  transform: scale(1.1);
+  background: rgba(var(--clr-main-rgb), 0.25) !important;
+}
+
+.resource-card:hover .cta-arrow {
+  transform: translateX(5px);
+}
+
+.resource-card .cta-link:hover {
+  color: var(--clr-white) !important;
+}
+
 /*    End dark theme rules  */
 /*# sourceMappingURL=main-LTR.css.map */
