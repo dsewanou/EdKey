@@ -15,6 +15,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <LogoLight v-if="isMounted && mode === 'light'" v-bind="$attrs" />
-  <LogoDark v-else v-bind="$attrs" />
+  <LogoLight v-if="isMounted && mode === 'light'" class="w-50" v-bind="$attrs" />
+  <LogoDark v-else class="w-50" v-bind="$attrs" />
 </template>
