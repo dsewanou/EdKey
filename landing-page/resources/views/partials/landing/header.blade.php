@@ -49,10 +49,10 @@
 
                                         <li class="menu-item"><a
                                                         class="menu-link {{ Request::is('contact-us') ? 'active' : '' }}"
-                                                        href="{{ url('/contact-us') }}">Contactez-nous</a></li>
+                                                        href="{{ url('/contact-us') }}">Contact</a></li>
                                         <li class="menu-item"><a
                                                         class="btn-solid btn-small w-100 w-lg-auto mb-3 mb-lg-0"
-                                                        href="#">Accedez gratuitement</a>
+                                                        href="#">Acceder gratuitement</a>
                                         </li>
                                         <li class="menu-item"><a class="btn-outline btn-small w-100 w-lg-auto"
                                                         href="#">Connexion</a>

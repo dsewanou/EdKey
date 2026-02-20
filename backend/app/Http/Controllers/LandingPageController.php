@@ -213,7 +213,6 @@ class LandingPageController extends Controller
                     ],
                     'cta_text' => 'En savoir plus',
                     'cta_url' => '#',
-                    'signature_role' => 'CEO & Fondateur',
                 ],
                 'why_choose_us' => [
                     'pre_title' => 'Pourquoi EdKey ?',

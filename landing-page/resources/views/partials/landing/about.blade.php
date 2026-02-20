@@ -31,9 +31,6 @@
             <div class="cta-area">
               <a class="btn-solid reveal-start"
                 href="{{ $about['vision']['cta_url'] }}">{{ $about['vision']['cta_text'] }}</a>
-              <div class="signature">
-                <div class="signature-name">{{ $about['vision']['signature_role'] }}</div>
-              </div>
             </div>
           </div>
         </div>
