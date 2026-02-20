@@ -10,13 +10,14 @@
     @include('partials.landing.hero')
     <!-- End Page hero-->
 
+    <!-- Start about Section-->
+    @include('partials.landing.about')
+    <!-- End about Section-->
+
     <!-- Start services Section-->
     @include('partials.landing.services')
     <!-- End services Section-->
 
-    <!-- Start about Section-->
-    @include('partials.landing.about')
-    <!-- End about Section-->
 
     <!-- Start stats Section-->
     @include('partials.landing.stats')
@@ -38,9 +39,11 @@
     @include('partials.landing.testimonials')
     <!-- End testimonials Section-->
 
-    <!-- Start blog Section-->
-    @include('partials.landing.blog')
-    <!-- End blog Section-->
+    <!-- Start FAQ Section-->
+    @include('partials.landing.faq')
+    <!-- End FAQ Section-->
+
+
 
     <!-- Start page-footer Section-->
     @include('partials.landing.footer')

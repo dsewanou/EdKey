@@ -16,10 +16,12 @@ $padding-for-hero-section: $link-height;
     transition: all 0.2s ease-in-out;
   }
 }
+
 %light-content {
   .menu-link {
     color: $clr-white;
   }
+
   .header-logo {
     .logo-img {
       &.light-logo {
@@ -35,6 +37,27 @@ $padding-for-hero-section: $link-height;
   .controls-box {
     .header-search-btn {
       color: $clr-white;
+    }
+  }
+
+  .btn-solid {
+    background-color: $clr-white;
+    border-color: $clr-white;
+    color: $clr-main !important;
+
+    &:hover {
+      background-color: transparent;
+      color: $clr-white !important;
+    }
+  }
+
+  .btn-outline {
+    color: $clr-white !important;
+    border-color: $clr-white !important;
+
+    &:hover {
+      background-color: $clr-white;
+      color: $clr-main !important;
     }
   }
 }
@@ -53,6 +76,7 @@ $padding-for-hero-section: $link-height;
 
     .menu-link {
       color: $clr-white !important;
+
       &::before {
         background-color: $clr-white !important;
       }
@@ -77,6 +101,7 @@ $padding-for-hero-section: $link-height;
       justify-content: space-around;
       z-index: 100;
       cursor: pointer;
+
       &:last-child {
         margin-#{$end-direction}: 0;
       }
@@ -95,7 +120,7 @@ $padding-for-hero-section: $link-height;
       margin-#{$end-direction}: 1rem;
       display: none;
 
-      & > span {
+      &>span {
         width: 30px;
         height: 2px;
         border-radius: 1px;
@@ -123,6 +148,7 @@ $padding-for-hero-section: $link-height;
       }
     }
   }
+
   border-bottom: 1px solid transparent;
 
   @include screen-lg {
@@ -145,13 +171,16 @@ $padding-for-hero-section: $link-height;
       height: $link-height;
     }
   }
+
   .menu-wrapper {
     margin-#{$end-direction}: auto;
     margin-#{$start-direction}: auto;
+
     &.links-at-end {
       margin-#{$start-direction}: auto;
       margin-#{$end-direction}: 1rem;
     }
+
     &.links-at-start {
       margin-#{$end-direction}: auto;
       margin-#{$start-direction}: 2rem;
@@ -166,6 +195,7 @@ $padding-for-hero-section: $link-height;
       margin: 0;
       @include ma-transition();
     }
+
     &.show {
       #{$start-direction}: 0;
 
@@ -185,8 +215,10 @@ $padding-for-hero-section: $link-height;
 
     .logo-img {
       display: block;
-      max-width: 10rem;
-      max-height: calc(#{$link-height} - 10px);
+      max-width: 20rem;
+      max-height: $link-height;
+      padding: 0;
+      margin: 0;
       @include ma-transition;
 
       &.light-logo {
@@ -221,6 +253,7 @@ $padding-for-hero-section: $link-height;
       overflow-x: hidden;
       background-color: $clr-main;
     }
+
     @include screen-sm {
       width: 75%;
     }
@@ -229,6 +262,7 @@ $padding-for-hero-section: $link-height;
   .menu-item {
     position: relative;
     padding: 0 1rem;
+
     @include screen-lg {
       width: 100%;
       padding: 0;
@@ -254,6 +288,7 @@ $padding-for-hero-section: $link-height;
     &.active,
     &:hover {
       color: $clr-main;
+
       &::before {
         scale: 1;
       }
@@ -277,6 +312,7 @@ $padding-for-hero-section: $link-height;
       line-height: 1;
       font-size: 0.625rem;
       margin-#{$start-direction}: 0.25rem;
+
       @include screen-lg {
         margin-#{$start-direction}: 0.5rem;
       }
@@ -284,7 +320,7 @@ $padding-for-hero-section: $link-height;
   }
 
   .has-sub-menu {
-    & > .sub-menu {
+    &>.sub-menu {
       list-style: none;
       position: absolute;
       top: 100%;
@@ -313,6 +349,7 @@ $padding-for-hero-section: $link-height;
 
       .sub-menu-item {
         padding: 0;
+
         @include screen-lg {
           padding-#{$start-direction}: 1rem;
         }
@@ -329,6 +366,7 @@ $padding-for-hero-section: $link-height;
         &:hover {
           color: $clr-white;
           transform: translate(0.25rem * $x-axe-direction, 0);
+
           &::before {
             background: $clr-white;
             scale: 1;
@@ -343,7 +381,7 @@ $padding-for-hero-section: $link-height;
     }
 
     &:hover {
-      > .sub-menu {
+      >.sub-menu {
         visibility: visible;
         opacity: 1;
         transform: translateY(0);
@@ -367,10 +405,13 @@ $padding-for-hero-section: $link-height;
         }
       }
     }
+
     .menu-link {
+
       &.active,
       &:hover {
         color: $clr-white;
+
         &::before {
           background-color: $clr-white;
         }
@@ -390,9 +431,11 @@ $padding-for-hero-section: $link-height;
         }
       }
     }
+
     a,
     .menu-link {
       color: $clr-white;
+
       &::before {
         background-color: $clr-white;
       }

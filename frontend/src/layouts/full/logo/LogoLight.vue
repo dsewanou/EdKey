@@ -4,11 +4,15 @@ import { RouterLink } from 'vue-router';
 import PrimaryLogo from '../../../assets/images/logos/logo-light_1.png';
 
 </script>
+
 <template>
-    <div class="logo lh-normal">
-        <RouterLink to="/">
-            <!-- <img :src="LightLogo" alt="home" /> -->
-            <img :src="PrimaryLogo" alt="home" />
-        </RouterLink>
-    </div>
+  <div class="logo lh-normal">
+    <RouterLink to="/">
+      <img 
+        :src="PrimaryLogo" 
+        alt="EdKey Logo" 
+        v-bind="$attrs"
+      />
+    </RouterLink>
+  </div>
 </template>
