@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { useColorMode } from '@vueuse/core';
+import { onMounted, ref } from 'vue';
 import LogoLight from './LogoLight.vue';
 import LogoDark from './LogoDark.vue';
 
-import { onMounted, ref } from 'vue';
-const mode = useColorMode(); // 'light' or 'dark'
+// On définit la prop mode pour qu'elle soit consommée ici
+defineProps<{
+  mode?: string
+}>();
+
 const isMounted = ref(false);
 onMounted(() => {
   isMounted.value = true;
@@ -12,6 +15,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <LogoDark v-if="!isMounted || mode !== 'dark'" />
-  <LogoLight v-else />
+  <LogoLight v-if="isMounted && mode === 'light'" v-bind="$attrs" />
+  <LogoDark v-else v-bind="$attrs" />
 </template>

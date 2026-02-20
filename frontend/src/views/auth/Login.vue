@@ -22,7 +22,7 @@ import { UserIcon, GraduationCapIcon } from 'lucide-vue-next'
             <span class="w-full border-t border-gray-200"></span>
           </div>
           <div class="relative flex justify-center text-xs uppercase">
-            <span class="bg-white px-4 text-gray-400 font-medium">Nouveau sur EdKey ?</span>
+            <span class="bg-white px-4 text-gray-400 font-medium">Créer votre compte</span>
           </div>
         </div>
 
@@ -34,14 +34,14 @@ import { UserIcon, GraduationCapIcon } from 'lucide-vue-next'
             class="flex w-full items-center justify-center gap-2 rounded-lg border border-[#011c61] bg-white px-4 py-2.5 text-sm font-semibold text-[#011c61] shadow-sm hover:bg-blue-50 transition-all"
           >
             <UserIcon class="w-4 h-4 text-gray-400 group-hover:text-[#011c61]" />
-            Espace Parent
+            Parent
           </RouterLink>
 
           <RouterLink :to="{ name: 'register', query: { role: 'student' } }"
             class="flex w-full items-center justify-center gap-2 rounded-lg border border-[#011c61] bg-white px-4 py-2.5 text-sm font-semibold text-[#011c61] shadow-sm hover:bg-blue-50 transition-all"
         >
             <GraduationCapIcon class="w-4 h-4 text-gray-400 group-hover:text-[#011c61]" />
-            Espace Élève
+            Apprenant
           </RouterLink>
         </div>
 

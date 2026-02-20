@@ -1,78 +1,5 @@
-<template>
-  <div class="relative h-full w-full overflow-hidden bg-slate-950">
-    <transition-group name="ken-burns">
-      <div 
-        v-for="(img, index) in slides" 
-        :key="img.id"
-        v-show="currentSlide === index"
-        class="absolute inset-0 z-0"
-      >
-        <div 
-          class="absolute inset-0 bg-cover bg-center transition-all duration-[2000ms]"
-          :style="{ backgroundImage: `url(${img.url})` }"
-        />
-        <div class="absolute inset-0 bg-gradient-to-tr from-[#011c61] via-[#011c61]/80 to-transparent opacity-90" />
-      </div>
-    </transition-group>
-
-    <div class="relative z-10 flex h-full flex-col justify-between p-16 text-white">
-      
-      <div class="flex items-center gap-3 animate-fade-in">
-        <div class="h-12 w-12 bg-white rounded-2xl flex items-center justify-center shadow-2xl shadow-white/20 rotate-3 transition-transform hover:rotate-0 duration-500">
-             <span class="text-[#011c61] font-black text-2xl">EK</span>
-        </div>
-        <div>
-          <span class="text-3xl font-black tracking-tighter uppercase text-white">EdKey</span>
-          <div class="h-1 w-8 bg-red-600 rounded-full"></div>
-        </div>
-      </div>
-
-      <div class="max-w-3xl">
-        <transition name="slide-up" mode="out-in">
-          <div :key="currentSlide">
-            <h2 class="mb-6 text-6xl xl:text-7xl font-black leading-[1.1] tracking-tight drop-shadow-2xl text-white">
-              {{ slides[currentSlide].title.split(' ').slice(0, -1).join(' ') }}
-              <span class="text-red-500">{{ slides[currentSlide].title.split(' ').pop() }}</span>
-            </h2>
-            
-            <p class="text-xl xl:text-2xl text-white/90 leading-relaxed font-light max-w-xl">
-              {{ slides[currentSlide].description }}
-            </p>
-          </div>
-        </transition>
-        
-        <div class="mt-12 flex gap-3">
-          <div 
-            v-for="(_, i) in slides" :key="i"
-            @click="currentSlide = i"
-            class="group cursor-pointer relative h-1.5 w-20 overflow-hidden rounded-full bg-white/20 transition-all"
-          >
-            <div 
-              v-if="currentSlide === i"
-              class="absolute inset-0 bg-red-600 animate-progress"
-            />
-            <div 
-              v-else-if="i < currentSlide"
-              class="absolute inset-0 bg-red-600/40" 
-            />
-          </div>
-        </div>
-      </div>
-
-      <div class="flex items-center justify-between text-white/50">
-        <div class="text-sm font-bold tracking-[0.2em] uppercase">
-          Digitalizing Education
-        </div>
-        <div class="flex items-center gap-4">
-          <div class="h-[1px] w-12 bg-white/20"></div>
-          <span class="text-xs font-mono">v1.0.4</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
-<script setup lang="ts">
+<script setup lang="tsx">
+import FullLogo from '@/layouts/full/logo/Logo.vue'
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const currentSlide = ref(0);
@@ -113,6 +40,82 @@ const startTimer = () => {
 onMounted(() => startTimer());
 onUnmounted(() => clearInterval(timer));
 </script>
+
+<template>
+  <div class="relative h-full w-full overflow-hidden bg-slate-950">
+    <transition-group name="ken-burns">
+      <div 
+        v-for="(img, index) in slides" 
+        :key="img.id"
+        v-show="currentSlide === index"
+        class="absolute inset-0 z-0"
+      >
+        <div 
+          class="absolute inset-0 bg-cover bg-center transition-all duration-[2000ms]"
+          :style="{ backgroundImage: `url(${img.url})` }"
+        />
+        <div class="absolute inset-0 bg-gradient-to-tr from-[#011c61] via-[#011c61]/80 to-transparent opacity-90" />
+      </div>
+    </transition-group>
+
+    <div class="relative z-10 flex h-full flex-col justify-between p-16 text-white">
+      
+      <div class="flex items-center gap-3 animate-fade-in"> 
+          <FullLogo mode="light" class="[&_img]:w-50" />
+        <!-- <div class="h-12 w-12 bg-white rounded-2xl flex items-center justify-center shadow-2xl shadow-white/20 rotate-3 transition-transform hover:rotate-0 duration-500">
+             <span class="text-[#011c61] font-black text-2xl">EK</span>
+        </div>
+        <div>
+          <span class="text-3xl font-black tracking-tighter uppercase text-white">EdKey</span>
+          <div class="h-1 w-8 bg-red-600 rounded-full"></div>
+        </div> -->
+      </div>
+
+      <div class="max-w-3xl">
+        <transition name="slide-up" mode="out-in">
+          <div :key="currentSlide">
+            <h2 class="mb-6 text-6xl xl:text-7xl font-black leading-[1.1] tracking-tight drop-shadow-2xl text-white">
+              {{ slides[currentSlide].title.split(' ').slice(0, -1).join(' ') }}
+              <span class="text-red-500">{{ slides[currentSlide].title.split(' ').pop() }}</span>
+            </h2>
+            
+            <p class="text-xl xl:text-2xl text-white/90 leading-relaxed font-light max-w-xl">
+              {{ slides[currentSlide].description }}
+            </p>
+          </div>
+        </transition>
+        
+        <div class="mt-12 flex gap-3">
+          <div 
+            v-for="(_, i) in slides" :key="i"
+            @click="currentSlide = i"
+            class="group cursor-pointer relative h-1.5 w-20 overflow-hidden rounded-full bg-white/20 transition-all"
+          >
+            <div 
+              v-if="currentSlide === i"
+              class="absolute inset-0 bg-red-600 animate-progress"
+            />
+            <div 
+              v-else-if="i < currentSlide"
+              class="absolute inset-0 bg-red-600/40" 
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between text-white/50">
+        <!-- <div class="text-sm font-bold tracking-[0.2em] uppercase">
+          Digitalizing Education
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="h-[1px] w-12 bg-white/20"></div>
+          <span class="text-xs font-mono">v1.0.4</span>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</template>
+ 
 
 <style scoped>
 /* Animation de la barre de progression (5s pour correspondre au timer) */
