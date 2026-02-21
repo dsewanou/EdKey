@@ -16,31 +16,41 @@ const isLoading = ref(false)
 
 async function onSubmit(event: Event) {
   event.preventDefault()
-  
   isLoading.value = true
 
   try {
-    // 1. Simulation de l'appel API (Laravel ou autre)
-    // Dans un vrai projet, tu ferais : const response = await api.post('/login', { ... })
     await new Promise((resolve) => setTimeout(resolve, 1500))
 
-    // 2. Données fictives reçues de l'API
-    const mockUser = {
-      id: 1,
-      name: "Utilisateur EdKey",
-      email: email.value
-    }
-    const mockToken = "12345|fake-jwt-token-edkey"
-
-    // 3. Appel de l'action Pinia pour sauvegarder l'état
-    authStore.setAuth(mockUser, mockToken)
-
-    // 4. Redirection (Le middleware fera le reste)
-    console.log('Login réussi ! Redirection...')
-    router.push('/') 
+    // Simulation de données avec un rôle (normalement envoyé par Laravel)
+    // Ici, on fait un test : si l'email contient "admin", on met le rôle admin
+    let assignedRole: 'admin' | 'parent' | 'student' = 'student'
     
+    if (email.value.includes('admin')) assignedRole = 'admin'
+    else if (email.value.includes('parent')) assignedRole = 'parent'
+
+    const mockUser = { id: 1, name: "Jean Houessou", email: email.value }
+    const mockToken = "12345|fake-jwt-token"
+
+    // On enregistre tout dans le store
+    authStore.setAuth(mockUser, mockToken, assignedRole)
+
+    // REDIRECTION BASÉE SUR LE RÔLE
+    switch (assignedRole) {
+      case 'admin':
+        router.push('/admin/dashboard')
+        break
+      case 'parent':
+        router.push('/parent/dashboard')
+        break
+      case 'student':
+        router.push('/dashboards/student')
+        break
+      default:
+        router.push('/')
+    }
+
   } catch (error) {
-    console.error('Erreur de connexion:', error)
+    console.error('Erreur:', error)
   } finally {
     isLoading.value = false
   }

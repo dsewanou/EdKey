@@ -25,14 +25,18 @@
       <div class="flex items-center space-x-2">
 
         <!-- Desktop only -->
-        <div class="hidden xl:flex items-center ">
-          <!-- <div
-            class="relative lg:block hidden group w-fit shadow-grid-shadow bg-[radial-gradient(100%_707.08%_at_0%_0%,#15CEBD_0%,#548AFE_33.82%,#E02FD6_72.12%,#FDB54E_100%)] p-0.5 rounded-full">
-            <a href="https://tailwind-admin.com/#pricing"
-              class="flex items-center gap-2.5 px-3 py-1.5 bg-card rounded-full transition-all dark:hover:bg-[radial-gradient(100%_707.08%_at_0%_0%,#15CEBD36_0%,#548AFE36_33.82%,#E02FD636_72.12%,#FDB54E36_100%)] group hover:bg-[radial-gradient(100%_707.08%_at_0%_0%,#15CEBD36_0%,#548AFE36_33.82%,#E02FD636_72.12%,#FDB54E36_100%)]">
-              <h6 class="text-base font-semibold">Check Pro Version</h6>
-            </a>
-          </div> -->
+        <div class="hidden xl:flex items-center space-x-3">
+          <button 
+            @click="isPricingModalOpen = true"
+            class="group relative flex items-center gap-2 px-5 py-2.5 text-sm font-bold text-white transition-all duration-300 rounded-xl overflow-hidden shadow-lg hover:shadow-primary/40 active:scale-95 bg-linear-to-r from-primary via-[#5d87ff] to-primary bg-[length:200%_auto] hover:bg-right"
+          >
+            <!-- Pulse effect -->
+            <span class="absolute inset-0 rounded-xl bg-white/20 animate-ping opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            
+            <i class="bi bi-patch-check-fill text-lg group-hover:rotate-12 transition-transform"></i>
+            <span>Mettre à jour Tarifications</span>
+          </button>
+          
           <ThemeToggler />
 
           <NotificationDD />
@@ -49,8 +53,11 @@
 
     <!-- Mobile Header Menu -->
     <div v-if="mobileMenuActive" class="xl:hidden block">
-      <MobileHeaderItems />
+      <MobileHeaderItems @open-pricing="isPricingModalOpen = true" />
     </div>
+
+    <!-- Pricing Modal -->
+    <PricingModal v-model:open="isPricingModalOpen" />
 
 
 
@@ -76,6 +83,7 @@ import LayoutVerticalSidebar from '../vertical-sidebar/VerticalSidebar.vue'
 import MobileHeaderItems from './MobileHeaderItems.vue'
 
 import ThemeToggler from '../vertical-header/ThemeToggler.vue'
+import PricingModal from './PricingModal.vue'
 
 import { Input } from '@/components/ui/input'
 import { Icon } from '@iconify/vue'
@@ -93,8 +101,8 @@ defineProps({
 
 
 
+const isPricingModalOpen = ref(false)
 const isSticky = ref(false)
-
 const mobileMenuActive = ref(false)
 
 

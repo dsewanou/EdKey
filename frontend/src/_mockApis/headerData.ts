@@ -46,23 +46,23 @@ const notifications: notificationType[] = [
 
 const profileDD: profileType[] = [
   {
-    title: "My Profile",
-    subtitle: "Account settings",
-    url: "/user-profile",
+    title: "Mon profil",
+    subtitle: "Profil de l'utilisateur",
+    url: "/profile",
     img: "tabler:user",
   },
-  {
-    title: "My Account",
-    subtitle: "My Daily Notes",
-    url: "/",
-    img: "tabler:mail",
-  },
-  {
-    title: "My Tasks",
-    subtitle: "To-do and Daily tasks",
-    url: "/",
-    img: "tabler:list-check",
-  },
+  // {
+  //   title: "My Account",
+  //   subtitle: "My Daily Notes",
+  //   url: "/",
+  //   img: "tabler:mail",
+  // },
+  // {
+  //   title: "My Tasks",
+  //   subtitle: "To-do and Daily tasks",
+  //   url: "/",
+  //   img: "tabler:list-check",
+  // },
 ];
 
 

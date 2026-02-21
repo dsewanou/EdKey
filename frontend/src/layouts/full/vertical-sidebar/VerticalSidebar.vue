@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
+import { useAuthStore } from '@/stores/auth'; // store Pinia
 import {
   Sidebar,
   SidebarHeader,
@@ -7,7 +8,7 @@ import {
 
   SidebarMenu,
 } from "@/components/ui/sidebar";
-import sidebarItems from "./sidebarItems";
+import sidebarItems, { type menu } from "./sidebarItems";
 
 import simplebar from "simplebar-vue";
 
@@ -15,13 +16,11 @@ import LayoutVerticalSidebarNavGroup from "./NavGroup/NavGroup.vue";
 import LayoutVerticalSidebarNavCollapse from "./NavCollapse/NavCollapse.vue";
 import LayoutVerticalSidebarNavItems from "./NavItems/NavItems.vue";
 
+
 import LayoutLogo from "../logo/Logo.vue";
 
-import Button from "@/components/ui/button/Button.vue";
-import rocket from '@/assets/images/backgrounds/rocket.png'
-
-
 const isHovered = ref(false);
+const authStore = useAuthStore();
 onMounted(() => {
   const wrapper = document.querySelector(".sidebar-wrapper");
   const sidebar = document.querySelector('[data-slot="sidebar"]');
@@ -51,7 +50,35 @@ onMounted(() => {
 
 });
 
+const filteredMenu = computed(() => {
+  const userRole = authStore.role; // 'admin', 'parent', 'student' ou null
 
+  // Fonction interne pour filtrer récursivement
+  const filterItems = (items: menu[]) => {
+    return items
+      .filter((item) => {
+        // RÈGLE : Si l'attribut roles n'existe pas ou est vide, c'est public
+        const isPublic = !item.roles || item.roles.length === 0;
+        
+        // RÈGLE : Si l'utilisateur possède l'un des rôles requis
+        const hasPermission = userRole && item.roles?.includes(userRole);
+
+        return isPublic || hasPermission;
+      })
+      .map((item) => {
+        // Si l'élément a des enfants, on applique le même filtre sur les enfants
+        if (item.children && item.children.length > 0) {
+          return {
+            ...item,
+            children: filterItems(item.children) // Appel récursif
+          };
+        }
+        return item;
+      });
+  };
+
+  return filterItems(sidebarItems);
+});
 
 
 
@@ -61,35 +88,20 @@ onMounted(() => {
   <Sidebar data-slot="sidebar" collapsible="icon" class="sidebar  bg-card pb-6"
     :class="{ 'shadow-sm z-[41] fixed': isHovered }" side="left">
     <!-- Brand Logo -->
-    <SidebarHeader class="pt-6 pb-5 relative whitespace-nowrap">
+    <SidebarHeader class="pt-6 pb-5 px-0 relative flex items-center justify-start overflow-hidden">
       <LayoutLogo />
     </SidebarHeader>
 
     <SidebarContent class="overflow-hidden">
       <simplebar class="h-[calc(100vh_-_100px)]">
         <SidebarMenu>
-          <template v-for="item in sidebarItems" :key="item.title">
+          <template v-for="item in filteredMenu" :key="item.title">
             <LayoutVerticalSidebarNavGroup v-if="item.header" :item="item" />
             <LayoutVerticalSidebarNavCollapse :item="item" :level="0" v-else-if="item.children" />
 
             <LayoutVerticalSidebarNavItems v-else :item="item" />
           </template>
         </SidebarMenu>
-        <div class="mt-9 px-6 overflow-hidden">
-          <div class="flex w-full bg-lightprimary rounded-lg p-6">
-            <div class="lg:w-1/2 w-full">
-              <h5 class="text-base text-charcoal">
-                Haven't Account?
-              </h5>
-              <Button color="primary" size="sm" as="a" target="_blank" href="#"
-                class="whitespace-nowrap mt-2 text-[13px]">Get
-                Pro</Button>
-            </div>
-            <div class="lg:w-1/2 w-full -mt-4 ml-[26px] scale-[1.2] shrink-0">
-              <img :src="rocket" alt="rocket" />
-            </div>
-          </div>
-        </div>
       </simplebar>
     </SidebarContent>
   </Sidebar>

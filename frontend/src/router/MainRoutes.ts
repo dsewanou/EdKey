@@ -1,13 +1,39 @@
 
 const MainRoutes = [
     {
-        path: '/',
+        path: '/modules',
         component: () => import('../layouts/full/FullLayout.vue'),
         children: [
+            {
+                name: 'Profile',
+                path: '/profile',
+                component: () => import('../views/profile/ParentProfileView.vue')
+            },         
+               {
+                name: 'ProfileStudend',
+                path: '/profile-student',
+                component: () => import('../views/profile/ProfileSettingsView.vue')
+            },
+
             {
                 path: '',
                 name: 'Modern',
                 component: () => import('../views/dashboards/Modern.vue'),
+            },
+            {
+                path: '/dashboards/student',
+                name: 'Modern',
+                component: () => import('../views/dashboards/StudentRegistrationDashboard.vue'),
+            },
+            {
+                name: 'Registration Dashboard',
+                path: '/dashboards/registration',
+                component: () => import('../views/dashboards/RegistrationDashboard.vue'),
+            },
+            {
+                name: 'Registration List',
+                path: '/modules/registrations/list',
+                component: () => import('../views/modules/registration/RegistrationList.vue'),
             },
 
             {

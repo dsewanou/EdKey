@@ -9,12 +9,14 @@ interface User {
 interface AuthState {
   user: User | null
   token: string | null
+  role: string | null
 }
 
 export const useAuthStore = defineStore('auth', {
   state: (): AuthState => ({
     user: null,
-    token: localStorage.getItem('token')
+    token: localStorage.getItem('token'),
+    role: null as 'admin' | 'parent' | 'student' | null, // Stockage du rôle
   }),
 
   getters: {
@@ -22,16 +24,18 @@ export const useAuthStore = defineStore('auth', {
   },
 
   actions: {
-    setAuth(user: User, token: string) {
+    setAuth(user: User, token: string, role: any) {
       this.user = user
       this.token = token
+      this.role = role
       localStorage.setItem('token', token)
+      localStorage.setItem('user_role', role)
     },
 
     logout() {
       this.user = null
       this.token = null
-      localStorage.removeItem('token')
+      localStorage.clear()
     }
   }
 })

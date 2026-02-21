@@ -12,6 +12,28 @@ import { profileDD } from "../../../_mockApis/headerData";
 import SimpleBar from "simplebar-vue";
 
 import user1 from "@/assets/images/profile/user-1.jpg";
+import { useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/auth' // Ajuste le chemin selon ton projet
+
+const router = useRouter()
+const authStore = useAuthStore()
+
+async function onLogout() {
+  try {
+    // 1. (Optionnel) Appel API pour révoquer le token côté serveur (Laravel Sanctum/Passport)
+    // await api.post('/logout') 
+
+    // 2. Nettoyage du store Pinia
+    authStore.logout() 
+
+    // 3. Redirection vers la page de connexion
+    console.log('Déconnexion réussie')
+    router.push('/auth/login2') 
+    
+  } catch (error) {
+    console.error('Erreur lors de la déconnexion:', error)
+  }
+}
 </script>
 
 <template>
@@ -51,8 +73,12 @@ import user1 from "@/assets/images/profile/user-1.jpg";
 
         <!-- Logout -->
         <div class="pt-2 px-4">
-          <Button variant="outline" class="w-full" as-child>
-            <RouterLink to="/auth/login2">Logout</RouterLink>
+          <Button 
+            variant="outline" 
+            class="w-full text-red-600 hover:text-red-700 hover:bg-red-50" 
+            @click="onLogout"
+          >
+            Déconnexion
           </Button>
         </div>
       </DropdownMenuContent>
